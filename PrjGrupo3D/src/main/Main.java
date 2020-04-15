@@ -14,7 +14,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-							//Creaamos los subsistemas
+							//Creamos los subsistemas
 		
 		GestionDatos gestionDatos = new GestionDatosImp();
 		GestionMenus gestionMenus = new GestionMenusImp();
@@ -31,7 +31,7 @@ public class Main {
 							//A partir de aqui son los metodos de las GUI
 		
 		
-							//GUI DEFINICION DE MENÚS
+							//GUI DEFINICION DE MENUS
 		
 		//En la GUI se mostraria una lista para los primeros, otra para los segundos, postres y bebidas
 		ArrayList<Plato> primeros = gestionDatos.getPrimeros();		
@@ -78,12 +78,6 @@ public class Main {
 		
 		
 
-		
-
 	}
-	
-	
-	
-	
-	
+		
 }
