@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import gestionDatos.GestionDatos;
 import modelo.Menu;
+import modelo.Plato;
 
 public class GestionMenusImp implements GestionMenus {
 	
@@ -18,15 +19,17 @@ public class GestionMenusImp implements GestionMenus {
 	@Override
 	public ArrayList<Menu> getMenusSemana() {
 		// SE DEVUELVEN EL DE HOY Y EL DEL RESTO DE LA SEMANA HASTA EL VIERNES
+		
+		
+		
+		//SI HOY ES MIERCOLES, SE DEVUELVE MIERCOLES, JUEVES Y VIERNES SOLAMENTE!!!!!!!!!
+		
+		
 		return null;
 
 	}
 
-	@Override
-	public Menu getMenuDia() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public void setGestionDatos(GestionDatos gestionDatos) {
@@ -48,5 +51,25 @@ public class GestionMenusImp implements GestionMenus {
 		gestionDatos.asociarMenuDia(idMenu, diaSemana);
 
 	}
+
+	@Override
+	public ArrayList<Plato> getPrimeros() {
+		return gestionDatos.getPrimeros();
+	}
+
+	@Override
+	public ArrayList<Plato> getSegundos() {
+		return gestionDatos.getSegundos();
+	}
+
+	@Override
+	public ArrayList<Plato> getPostres() {
+		return gestionDatos.getPostres();
+	}
+
+	
+	
+	
+	
 
 }

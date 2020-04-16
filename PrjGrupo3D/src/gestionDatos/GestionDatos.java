@@ -26,17 +26,17 @@ public interface GestionDatos {
 	
 	public Menu getMenu(int idMenu);
 	
-	public void guardarMenu(Menu menu);
-	
 	public void actualizarMenu(Menu menu);
 	
 	public void asociarMenuDia(int idMenu, int diaSemana); 
 	
-	public void guardarFactura(Factura factura);
-	
 	public ArrayList<Factura> getFacturas();
 	
 	public ArrayList<Estadistica> getEstadisticas();
+
+	public void guardarMenu(Menu menu);
+
+	public void guardarFactura(Factura factura);
 
 	public void guardarEstadistica(Estadistica estadistica);
 	

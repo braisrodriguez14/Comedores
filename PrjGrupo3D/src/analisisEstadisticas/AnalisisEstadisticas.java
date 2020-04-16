@@ -17,7 +17,7 @@ public interface AnalisisEstadisticas {
 	
 	public Plato platoPeorValorado();
 	
-	public String ocupacionDiaSemana(String dia);
+	public String ocupacionDiaSemana(int dia);
 	
 	public String horaMasFrecuente();
 	

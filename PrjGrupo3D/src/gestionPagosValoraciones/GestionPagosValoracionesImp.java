@@ -7,7 +7,9 @@ import modelo.Factura;
 import sensores.Sensor;
 
 public class GestionPagosValoracionesImp implements GestionPagosValoraciones {
-
+	
+	private Sensor sensor;
+	private GestionDatos gestionDatos;
 	
 	public GestionPagosValoracionesImp() {
 		
@@ -20,6 +22,7 @@ public class GestionPagosValoracionesImp implements GestionPagosValoraciones {
 		
 		//LLAMAMOS AL SUBSISTEMA DE SENSORES Y SE ESCANEA LA BANDEJA (NO SE PASA COMO PARAMETRO)
 		//NOS DEVUELVE EL ID DE LA BANDEJA Y DEL VALE QUE """"ESCANEAMOS"""""
+						//GUARDAMOS LA BANDEJA EN FICHERO
 		//CON ESTO GENERAMOS UNA FACTURA
 		//SE GUARDA EN EL FICHERO gestionDatos.guardarFactura(     Factura creada    )
 		//SE DEVUELVE LA FACTURA
@@ -34,19 +37,21 @@ public class GestionPagosValoracionesImp implements GestionPagosValoraciones {
 	}
 
 	@Override
-	public void devolverBandeja() {
-		// TODO Auto-generated method stub
+	public void devolverBandeja(Bandeja bandeja) {
+		
+
+		//SE GUARDA LA HORA DE DEVOLUCION DE LA BANDEJA
 	}
 
 	@Override
 	public void setGestionDatos(GestionDatos gestionDatos) {
-		// TODO Auto-generated method stub
+		this.gestionDatos = gestionDatos;
 
 	}
 
 	@Override
 	public void setSensor(Sensor sensor) {
-		// TODO Auto-generated method stub
+		this.sensor = sensor;
 
 	}
 

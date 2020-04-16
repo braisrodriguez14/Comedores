@@ -14,16 +14,22 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-							//Creamos los subsistemas
+		
+							//Creamos los subsistemas  
 		
 		GestionDatos gestionDatos = new GestionDatosImp();
 		GestionMenus gestionMenus = new GestionMenusImp();
 		SeleccionMenus seleccionMenus = new SeleccionMenusImp();
 		GestionPagosValoraciones gestionPagosValoraciones = new GestionPagosValoracionesImp();
-		AnalisisEstadisticas analisisEstadisticas = new AnalisisEstadisticasImp();
 		Sensor sensor = new SensorImp();
+		AnalisisEstadisticas analisisEstadisticas = new AnalisisEstadisticasImp();
 
 		gestionMenus.setGestionDatos(gestionDatos);
+		seleccionMenus.setGestionDatos(gestionDatos);
+		seleccionMenus.setGestionMenus(gestionMenus);
+		gestionPagosValoraciones.setGestionDatos(gestionDatos);
+		gestionPagosValoraciones.setSensor(sensor);
+		analisisEstadisticas.setGestionDatos(gestionDatos);
 		
 		
 		
@@ -34,9 +40,9 @@ public class Main {
 							//GUI DEFINICION DE MENUS
 		
 		//En la GUI se mostraria una lista para los primeros, otra para los segundos y postres
-		ArrayList<Plato> primeros = gestionDatos.getPrimeros();		
-		ArrayList<Plato> segundos = gestionDatos.getSegundos();	
-		ArrayList<Plato> postres = gestionDatos.getPostres();
+		ArrayList<Plato> primeros = gestionMenus.getPrimeros();		
+		ArrayList<Plato> segundos = gestionMenus.getSegundos();	
+		ArrayList<Plato> postres = gestionMenus.getPostres();
 		
 		ArrayList<Plato> primerosMenu = new ArrayList<Plato>();		
 		ArrayList<Plato> segundosMenu = new ArrayList<Plato>();	
@@ -75,8 +81,8 @@ public class Main {
 						//GUI SELECCION DE MENUS
 		
 		//Se obtiene el menu del dia correspondiente al dia de hoy y todas las bebidas
-		Menu menuDia = gestionMenus.getMenuDia();
-		ArrayList<Plato> bebidas = gestionDatos.getBebidas();
+		Menu menuDia = seleccionMenus.getMenuDia();
+		ArrayList<Plato> bebidas = seleccionMenus.getBebidas();
 		
 		
 		//Se crea la bandeja (lo que vamos a comer) a partir de el menu de el dia y las bebidas
@@ -87,15 +93,20 @@ public class Main {
 		
 		Bandeja bandeja = new BandejaImp(primero, segundo, postre, bebida);
 		
-		//Se guarda la bandeja 
-		seleccionMenus.guardarBandeja(bandeja);
 		
 		//Se procede al pago
 		Factura factura = gestionPagosValoraciones.pagar(bandeja);
 		
+		//usuario.comer(bandeja);	#EasterEGG
+		
+		//Se devuelve la bandeja y el usuario se marcha del comedor
+		gestionPagosValoraciones.devolverBandeja(bandeja);
+		
+		
 		
 		
 						//GUI VALORACIONES DE MENUS
+		
 		int valoracionPrimero = 5;
 		int valoracionSegundo = 4;
 		int valoracionPostre = -1;  //No valorado
@@ -104,47 +115,24 @@ public class Main {
 		
 
 	
+
+						//GUI VISION MENUS (ESTADISTICAS)
 		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		analisisEstadisticas.platoMasSelecionado();
+		
+		analisisEstadisticas.platoMenosSelecionado();
+		
+		analisisEstadisticas.platoMejorValorado();
+		
+		analisisEstadisticas.platoPeorValorado();
+		
+		analisisEstadisticas.ocupacionDiaSemana(5);
+		
+		analisisEstadisticas.horaMasFrecuente();
+		
+		analisisEstadisticas.duracionMediaComida();
+		
+		analisisEstadisticas.rankingPlatos();
 	
 	
 	}

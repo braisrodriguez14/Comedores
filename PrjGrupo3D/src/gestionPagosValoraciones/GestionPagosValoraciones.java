@@ -12,7 +12,7 @@ public interface GestionPagosValoraciones {
 	
 	public void valorar(Factura factura, Bandeja bandeja,int valoracionPrimero, int valoracionSegundo, int valoracionPostre);
 	
-	public void devolverBandeja();
+	public void devolverBandeja(Bandeja bandeja);
 	
 	public void setGestionDatos(GestionDatos gestionDatos);
 	

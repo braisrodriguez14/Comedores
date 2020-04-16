@@ -5,6 +5,7 @@ import modelo.Plato;
 
 public class AnalisisEstadisticasImp implements AnalisisEstadisticas {
 
+	private GestionDatos gestionDatos;
 	
 	public AnalisisEstadisticasImp() {
 		
@@ -12,7 +13,7 @@ public class AnalisisEstadisticasImp implements AnalisisEstadisticas {
 	
 	@Override
 	public void setGestionDatos(GestionDatos gestionDatos) {
-		// TODO Auto-generated method stub
+		this.gestionDatos = gestionDatos;
 
 	}
 
@@ -47,7 +48,7 @@ public class AnalisisEstadisticasImp implements AnalisisEstadisticas {
 	}
 
 	@Override
-	public String ocupacionDiaSemana(String dia) {
+	public String ocupacionDiaSemana(int dia) {
 		// TODO Auto-generated method stub
 		return null;
 	}
