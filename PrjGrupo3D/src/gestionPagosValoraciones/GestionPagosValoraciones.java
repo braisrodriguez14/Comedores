@@ -18,5 +18,4 @@ public interface GestionPagosValoraciones {
 	
 	public void setSensor(Sensor sensor);
 
-
 }

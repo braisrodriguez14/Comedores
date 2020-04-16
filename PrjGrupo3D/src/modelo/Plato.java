@@ -9,5 +9,5 @@ public interface Plato {
 	public void setNombre(String nombre);
 	
 	public void setTipo(String tipo);
-
+	
 }

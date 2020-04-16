@@ -6,11 +6,11 @@ import modelo.Plato;
 public class AnalisisEstadisticasImp implements AnalisisEstadisticas {
 
 	private GestionDatos gestionDatos;
-	
+
 	public AnalisisEstadisticasImp() {
-		
+
 	}
-	
+
 	@Override
 	public void setGestionDatos(GestionDatos gestionDatos) {
 		this.gestionDatos = gestionDatos;

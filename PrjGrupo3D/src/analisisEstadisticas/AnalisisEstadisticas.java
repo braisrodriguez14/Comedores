@@ -25,5 +25,4 @@ public interface AnalisisEstadisticas {
 	
 	public String rankingPlatos();
 
-
 }

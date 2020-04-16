@@ -17,7 +17,6 @@ public class MenuImp implements Menu {
 		this.dia = null;
 	}
 	
-	
 
 	public ArrayList<Plato> getPrimeros() {
 		return primeros;
