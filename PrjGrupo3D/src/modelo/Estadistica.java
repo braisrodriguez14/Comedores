@@ -2,7 +2,7 @@ package modelo;
 
 public interface Estadistica {
 	
-	public int getIdEstadistica();
+	public int getId();
 	
 	public int getIdFactura();
 	
@@ -18,7 +18,7 @@ public interface Estadistica {
 	
 	public Bandeja getBandeja();
 	
-	public void setIdEstadistica(int idEstadistica);
+	public void setId(int idEstadistica);
 	
 	public void setIdFactura(int idFactura);	
 	

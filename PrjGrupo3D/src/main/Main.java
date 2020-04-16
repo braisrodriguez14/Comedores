@@ -33,16 +33,14 @@ public class Main {
 		
 							//GUI DEFINICION DE MENUS
 		
-		//En la GUI se mostraria una lista para los primeros, otra para los segundos, postres y bebidas
+		//En la GUI se mostraria una lista para los primeros, otra para los segundos y postres
 		ArrayList<Plato> primeros = gestionDatos.getPrimeros();		
 		ArrayList<Plato> segundos = gestionDatos.getSegundos();	
 		ArrayList<Plato> postres = gestionDatos.getPostres();
-		ArrayList<Plato> bebidas = gestionDatos.getBebidas();
 		
 		ArrayList<Plato> primerosMenu = new ArrayList<Plato>();		
 		ArrayList<Plato> segundosMenu = new ArrayList<Plato>();	
 		ArrayList<Plato> postresMenu = new ArrayList<Plato>();
-		ArrayList<Plato> bebidasMenu = new ArrayList<Plato>();
 		
 		
 		//Se seleccionan los platos que forman parte del menu
@@ -58,12 +56,9 @@ public class Main {
 		postresMenu.add(postres.get(1));
 		postresMenu.add(postres.get(2));
 
-		bebidasMenu.add(bebidas.get(0));
-		bebidasMenu.add(bebidas.get(1));
-		bebidasMenu.add(bebidas.get(2));
 		
 		//Se procede a crear el menu
-		Menu menu = new MenuImp(primerosMenu, segundosMenu, postresMenu, bebidasMenu);
+		Menu menu = new MenuImp(primerosMenu, segundosMenu, postresMenu);
 		
 		//Se guarda el menu, que devuelve el id que se le ha asignado
 		int idMenu = gestionMenus.guardarMenu(menu);
@@ -75,10 +70,84 @@ public class Main {
 		ArrayList<Menu> menusSemana = gestionMenus.getMenusSemana();
 		
 		
-		//HOLA BRAISSSSSSSSSSSSS
-		//HOLA PIMP
+		
+		
+						//GUI SELECCION DE MENUS
+		
+		//Se obtiene el menu del dia correspondiente al dia de hoy y todas las bebidas
+		Menu menuDia = gestionMenus.getMenuDia();
+		ArrayList<Plato> bebidas = gestionDatos.getBebidas();
+		
+		
+		//Se crea la bandeja (lo que vamos a comer) a partir de el menu de el dia y las bebidas
+		Plato primero = menuDia.getPrimeros().get(0);
+		Plato segundo = menuDia.getSegundos().get(1);
+		Plato postre = menuDia.getPostres().get(2);
+		Plato bebida = bebidas.get(0);
+		
+		Bandeja bandeja = new BandejaImp(primero, segundo, postre, bebida);
+		
+		//Se guarda la bandeja 
+		seleccionMenus.guardarBandeja(bandeja);
+		
+		//Se procede al pago
+		Factura factura = gestionPagosValoraciones.pagar(bandeja);
+		
+		
+		
+						//GUI VALORACIONES DE MENUS
+		int valoracionPrimero = 5;
+		int valoracionSegundo = 4;
+		int valoracionPostre = -1;  //No valorado
+		
+		gestionPagosValoraciones.valorar(factura, bandeja,valoracionPrimero, valoracionSegundo, valoracionPostre);
 		
 
-	}
+	
 		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+	
+	
 }

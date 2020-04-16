@@ -9,8 +9,12 @@ public interface Menu {
 	public ArrayList<Plato> getSegundos();
 	
 	public ArrayList<Plato> getPostres();
-	
+
 	public String getDia();
+	
+	public int getId();
+	
+	public void setId(int idMenu);
 	
 	public void setDia(String dia);
 	

@@ -10,9 +10,9 @@ public interface GestionPagosValoraciones {
 	
 	public Factura pagar(Bandeja bandeja);
 	
-	public Estadistica valorar();
+	public void valorar(Factura factura, Bandeja bandeja,int valoracionPrimero, int valoracionSegundo, int valoracionPostre);
 	
-	public Estadistica devolverBandeja();
+	public void devolverBandeja();
 	
 	public void setGestionDatos(GestionDatos gestionDatos);
 	

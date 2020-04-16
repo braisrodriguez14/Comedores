@@ -1,59 +1,89 @@
 package modelo;
 
 public class FacturaImp implements Factura {
-
-	@Override
-	public int getIdFactura() {
-		// TODO Auto-generated method stub
-		return 0;
+	
+	private int id;
+	private Estadistica estadistica;
+	private String dia;
+	private int idVale;
+	private int idFactura;
+	private int idMenu;
+	
+	
+	public FacturaImp(Estadistica estadistica, String dia, int idVale, int idFactura, int idMenu) {
+		this.id = -777;
+		this.estadistica = estadistica;
+		this.dia = dia;
+		this.idVale = idVale;
+		this.idFactura = idFactura;
+		this.idMenu = idMenu;
 	}
 
-	@Override
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 	public Estadistica getEstadistica() {
-		// TODO Auto-generated method stub
-		return null;
+		return estadistica;
 	}
 
-	@Override
-	public String getDia() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public int getIdVale() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void setIdFactura(int idFactura) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setIdMenu(int idMenu) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void setEstadistica(Estadistica estadistica) {
-		// TODO Auto-generated method stub
-
+		this.estadistica = estadistica;
 	}
 
-	@Override
+
+	public String getDia() {
+		return dia;
+	}
+
+
 	public void setDia(String dia) {
-		// TODO Auto-generated method stub
-
+		this.dia = dia;
 	}
 
-	@Override
+
+	public int getIdVale() {
+		return idVale;
+	}
+
+
 	public void setIdVale(int idVale) {
-		// TODO Auto-generated method stub
-
+		this.idVale = idVale;
 	}
+
+
+	public int getIdFactura() {
+		return idFactura;
+	}
+
+
+	public void setIdFactura(int idFactura) {
+		this.idFactura = idFactura;
+	}
+
+
+	public int getIdMenu() {
+		return idMenu;
+	}
+
+
+	public void setIdMenu(int idMenu) {
+		this.idMenu = idMenu;
+	}
+	
+	
+	
+	
+	
+	
+	
 
 }

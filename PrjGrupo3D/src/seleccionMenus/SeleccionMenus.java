@@ -6,7 +6,7 @@ import modelo.Bandeja;
 
 public interface SeleccionMenus {
 	
-	public void setGestionMenus(GestionMenus gestionMenus);
+	public void setGestionMenus(GestionMenus gestionMenus);   
 	
 	public void setGestionDatos(GestionDatos gestionDatos);
 	

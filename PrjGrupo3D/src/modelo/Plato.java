@@ -2,7 +2,7 @@ package modelo;
 
 public interface Plato {
 	
-	public String getNombre();
+	public String getNombre();     
 	
 	public String getTipo();
 	

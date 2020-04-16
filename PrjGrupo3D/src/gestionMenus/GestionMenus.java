@@ -9,7 +9,7 @@ public interface GestionMenus {
 	
 	public ArrayList<Menu> getMenusSemana();
 	
-	public Menu getMenuDia(String dia);
+	public Menu getMenuDia();
 	
 	public void setGestionDatos(GestionDatos gestionDatos);
 

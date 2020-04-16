@@ -1,65 +1,74 @@
 package modelo;
 
 public class BandejaImp implements Bandeja {
-
-	@Override
-	public int getIdBandeja() {
-		// TODO Auto-generated method stub
-		return 0;
+	
+	private int id;
+	private Plato primero;
+	private Plato segundo;
+	private Plato postre;
+	private Plato bebida;
+	
+	
+	public BandejaImp(Plato primero, Plato segundo, Plato postre, Plato bebida) {
+		this.id = -777;
+		this.primero = primero;
+		this.segundo = segundo;
+		this.postre = postre;
+		this.bebida = bebida;
+	}
+	
+	public int getId() {
+		return id;
 	}
 
-	@Override
+
+	public void setId(int idBandeja) {
+		this.id = idBandeja;
+	}
+
+
 	public Plato getPrimero() {
-		// TODO Auto-generated method stub
-		return null;
+		return primero;
 	}
 
-	@Override
-	public Plato getSegundo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public Plato getPostre() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Plato getBebida() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setIdBandeja(int idBandeja) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void setPrimero(Plato primero) {
-		// TODO Auto-generated method stub
-
+		this.primero = primero;
 	}
 
-	@Override
+
+	public Plato getSegundo() {
+		return segundo;
+	}
+
+
 	public void setSegundo(Plato segundo) {
-		// TODO Auto-generated method stub
-
+		this.segundo = segundo;
 	}
 
-	@Override
+
+	public Plato getPostre() {
+		return postre;
+	}
+
+
 	public void setPostre(Plato postre) {
-		// TODO Auto-generated method stub
-
+		this.postre = postre;
 	}
 
-	@Override
+
+	public Plato getBebida() {
+		return bebida;
+	}
+
+
 	public void setBebida(Plato bebida) {
-		// TODO Auto-generated method stub
-
+		this.bebida = bebida;
 	}
+
+
+
+
+
 
 }

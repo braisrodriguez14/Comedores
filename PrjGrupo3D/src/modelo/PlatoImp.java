@@ -2,28 +2,36 @@ package modelo;
 
 public class PlatoImp implements Plato {
 
-	@Override
+	private String nombre;
+	private String tipo;
+	
+	
+	public PlatoImp(String nombre, String tipo) {
+		this.nombre = nombre;
+		this.tipo = tipo;
+	}
+
+
 	public String getNombre() {
-		// TODO Auto-generated method stub
-		return null;
+		return nombre;
 	}
 
-	@Override
-	public String getTipo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
 	public void setNombre(String nombre) {
-		// TODO Auto-generated method stub
-
+		this.nombre = nombre;
 	}
 
-	@Override
+
+	public String getTipo() {
+		return tipo;
+	}
+
+
 	public void setTipo(String tipo) {
-		// TODO Auto-generated method stub
-
+		this.tipo = tipo;
 	}
+	
+	
+	
 
 }

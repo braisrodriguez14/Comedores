@@ -17,13 +17,13 @@ public class GestionMenusImp implements GestionMenus {
 
 	@Override
 	public ArrayList<Menu> getMenusSemana() {
-		// TODO Auto-generated method stub
+		// SE DEVUELVEN EL DE HOY Y EL DEL RESTO DE LA SEMANA HASTA EL VIERNES
 		return null;
 
 	}
 
 	@Override
-	public Menu getMenuDia(String dia) {
+	public Menu getMenuDia() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -36,7 +36,8 @@ public class GestionMenusImp implements GestionMenus {
 
 	@Override
 	public int guardarMenu(Menu menu) {
-		// TODO Auto-generated method stub
+		//Cuando se guarde el menu en el fichero, se devuelve el id
+		//hacer menu.setId(   el id que nos devuelva     )
 		return 0;
 
 	}

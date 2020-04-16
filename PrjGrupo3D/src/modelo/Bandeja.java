@@ -2,7 +2,7 @@ package modelo;
 
 public interface Bandeja {
 
-	public int getIdBandeja();
+	public int getId();
 	
 	public Plato getPrimero();
 	
@@ -12,7 +12,7 @@ public interface Bandeja {
 	
 	public Plato getBebida();
 	
-	public void setIdBandeja(int idBandeja);
+	public void setId(int idBandeja);
 	
 	public void setPrimero(Plato primero);
 	

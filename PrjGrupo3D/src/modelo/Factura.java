@@ -2,7 +2,7 @@ package modelo;
 
 public interface Factura {
 	
-	public int getIdFactura();
+	public int getId();
 	
 	public Estadistica getEstadistica();
 	
@@ -10,7 +10,7 @@ public interface Factura {
 	
 	public int getIdVale();
 	
-	public void setIdFactura(int idFactura);
+	public void setId(int idFactura);
 	
 	public void setIdMenu(int idMenu);
 	

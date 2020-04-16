@@ -6,6 +6,13 @@ import modelo.Bandeja;
 
 public class SeleccionMenusImp implements SeleccionMenus {
 
+	private GestionMenus gestionMenu;
+	private GestionDatos gestionDatos;
+	
+	public SeleccionMenusImp() {
+		
+	}
+	
 	@Override
 	public void setGestionMenus(GestionMenus gestionMenus) {
 		// TODO Auto-generated method stub
@@ -20,8 +27,7 @@ public class SeleccionMenusImp implements SeleccionMenus {
 
 	@Override
 	public void guardarBandeja(Bandeja bandeja) {
-		// TODO Auto-generated method stub
-
+		gestionDatos.guardarBandeja(bandeja);
 	}
 
 }

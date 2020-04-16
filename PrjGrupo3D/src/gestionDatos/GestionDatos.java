@@ -2,6 +2,7 @@ package gestionDatos;
 
 import java.util.ArrayList;
 
+import modelo.Bandeja;
 import modelo.Estadistica;
 import modelo.Factura;
 import modelo.Menu;
@@ -36,8 +37,10 @@ public interface GestionDatos {
 	public ArrayList<Factura> getFacturas();
 	
 	public ArrayList<Estadistica> getEstadisticas();
-	
+
 	public void guardarEstadistica(Estadistica estadistica);
+	
+	public void guardarBandeja(Bandeja bandeja);
 
 
 }

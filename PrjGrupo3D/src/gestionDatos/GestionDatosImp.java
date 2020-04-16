@@ -2,6 +2,7 @@ package gestionDatos;
 
 import java.util.ArrayList;
 
+import modelo.Bandeja;
 import modelo.Estadistica;
 import modelo.Factura;
 import modelo.Menu;
@@ -111,6 +112,12 @@ public class GestionDatosImp implements GestionDatos {
 	public void guardarEstadistica(Estadistica estadistica) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void guardarBandeja(Bandeja bandeja) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
