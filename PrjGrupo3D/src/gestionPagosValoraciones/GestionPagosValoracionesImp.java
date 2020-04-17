@@ -4,6 +4,7 @@ import gestionDatos.GestionDatos;
 import modelo.Bandeja;
 import modelo.Estadistica;
 import modelo.Factura;
+import modelo.FacturaImp;
 import sensores.Sensor;
 
 public class GestionPagosValoracionesImp implements GestionPagosValoraciones {
@@ -17,30 +18,36 @@ public class GestionPagosValoracionesImp implements GestionPagosValoraciones {
 	
 	
 	@Override
-	public Factura pagar(Bandeja bandeja) {
+	public Factura pagar(Bandeja bandeja, int idMenu) {
 		
+		//Escaneamos la bandeja desde el subsitema sensores
+		int idBandeja = sensor.leerIdBandeja();
+		//Establecemos el id de la bandeja leido
+		bandeja.setId(idBandeja);
 		
-		//LLAMAMOS AL SUBSISTEMA DE SENSORES Y SE ESCANEA LA BANDEJA (NO SE PASA COMO PARAMETRO)
-		//NOS DEVUELVE EL ID DE LA BANDEJA Y DEL VALE QUE """"ESCANEAMOS"""""
-						//GUARDAMOS LA BANDEJA EN FICHERO
-		//CON ESTO GENERAMOS UNA FACTURA
-		//SE GUARDA EN EL FICHERO gestionDatos.guardarFactura(     Factura creada    )
-		//SE DEVUELVE LA FACTURA
+		//Escaneamos el vale desde el subsitema sensores
+		int idVale = sensor.leerIdVale();
 		
-		return null;
+		//Creamos la factura
+		Factura factura = new FacturaImp(idVale, idMenu);
+		
+		//Guardamos la factura (Se le establece un id al ser guardada en archivo)
+		gestionDatos.guardarFactura(factura);
+		//Guardamos los datos de la comida en la Base Estadistica (datos bandeja, hora de asignacion y la factura asociada)
+		gestionDatos.guardarComida(bandeja, factura.getId());
+		
+		return factura;
 	}
 	
 
 	@Override
-	public void valorar(Factura factura, Bandeja bandeja,int valoracionPrimero, int valoracionSegundo, int valoracionPostre) {
-		// SE GUARDA LA ESTADISTICA QUE SE GENERA EN EL FICHERO
+	public void valorar(int idFactura,int valoracionPrimero, int valoracionSegundo, int valoracionPostre) {
+		gestionDatos.valorar(idFactura, valoracionPrimero, valoracionSegundo, valoracionPostre);
 	}
 
 	@Override
-	public void devolverBandeja(Bandeja bandeja) {
-		
-
-		//SE GUARDA LA HORA DE DEVOLUCION DE LA BANDEJA
+	public void devolverBandeja(int idBandeja) {
+		gestionDatos.devolverBandeja(idBandeja);
 	}
 
 	@Override

@@ -10,13 +10,13 @@ public interface Menu {
 
 	public ArrayList<Plato> getPostres();
 
-	public String getDia();
+	public int getDia();
 
 	public int getId();
 
 	public void setId(int idMenu);
 
-	public void setDia(String dia);
+	public void setDia(int dia);
 
 	public void setPrimeros(ArrayList<Plato> primeros);
 

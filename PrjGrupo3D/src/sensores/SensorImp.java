@@ -4,14 +4,12 @@ public class SensorImp implements Sensor {
 
 	@Override
 	public int leerIdBandeja() {
-		// TODO Auto-generated method stub
-		return 0;
+		return (int) ( Math.random() * 2147483647.0 );
 	}
 
 	@Override
 	public int leerIdVale() {
-		// TODO Auto-generated method stub
-		return 0;
+		return (int) ( Math.random() * 2147483647.0 );
 	}
 
 }

@@ -8,11 +8,11 @@ import sensores.Sensor;
 
 public interface GestionPagosValoraciones {
 	
-	public Factura pagar(Bandeja bandeja);
+	public Factura pagar(Bandeja bandeja, int idMenu);
 	
-	public void valorar(Factura factura, Bandeja bandeja,int valoracionPrimero, int valoracionSegundo, int valoracionPostre);
+	public void valorar(int idFactura, int valoracionPrimero, int valoracionSegundo, int valoracionPostre);
 	
-	public void devolverBandeja(Bandeja bandeja);
+	public void devolverBandeja(int idBandeja);
 	
 	public void setGestionDatos(GestionDatos gestionDatos);
 	

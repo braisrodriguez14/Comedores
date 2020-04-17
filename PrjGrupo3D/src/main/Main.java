@@ -70,7 +70,7 @@ public class Main {
 		int idMenu = gestionMenus.guardarMenu(menu);
 		
 		//Se asocia el menu al dia de la semana  (Lunes-1...Viernes-5)
-		gestionMenus.asociarMenuDia(idMenu, 3);
+		gestionMenus.asociarMenuDia(idMenu, 5);
 		
 		//Se recuperan los menus de cada dia de la semana
 		ArrayList<Menu> menusSemana = gestionMenus.getMenusSemana();
@@ -95,12 +95,12 @@ public class Main {
 		
 		
 		//Se procede al pago
-		Factura factura = gestionPagosValoraciones.pagar(bandeja);
+		Factura factura = gestionPagosValoraciones.pagar(bandeja, menuDia.getId());
 		
 		//usuario.comer(bandeja);	#EasterEGG
 		
 		//Se devuelve la bandeja y el usuario se marcha del comedor
-		gestionPagosValoraciones.devolverBandeja(bandeja);
+		gestionPagosValoraciones.devolverBandeja(bandeja.getId());
 		
 		
 		
@@ -111,13 +111,13 @@ public class Main {
 		int valoracionSegundo = 4;
 		int valoracionPostre = -1;  //No valorado
 		
-		gestionPagosValoraciones.valorar(factura, bandeja,valoracionPrimero, valoracionSegundo, valoracionPostre);
+		gestionPagosValoraciones.valorar(factura.getId(),valoracionPrimero, valoracionSegundo, valoracionPostre);
 		
 
 	
 
 						//GUI VISION MENUS (ESTADISTICAS)
-		
+		/*
 		analisisEstadisticas.platoMasSelecionado();
 		
 		analisisEstadisticas.platoMenosSelecionado();
@@ -133,7 +133,7 @@ public class Main {
 		analisisEstadisticas.duracionMediaComida();
 		
 		analisisEstadisticas.rankingPlatos();
-	
+		*/
 	
 	}
 	

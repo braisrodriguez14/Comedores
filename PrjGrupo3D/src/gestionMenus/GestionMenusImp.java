@@ -7,44 +7,38 @@ import modelo.Menu;
 import modelo.Plato;
 
 public class GestionMenusImp implements GestionMenus {
-	
-	//private ArrayList<Menu> menusSemana;
+
 	private GestionDatos gestionDatos;
 
 	public GestionMenusImp() {
-		//this.menusSemana = new ArrayList<Menu>();
 		this.gestionDatos = null;
 	}
 
 	@Override
 	public ArrayList<Menu> getMenusSemana() {
-		// SE DEVUELVEN EL DE HOY Y EL DEL RESTO DE LA SEMANA HASTA EL VIERNES
-		
-		
-		
-		//SI HOY ES MIERCOLES, SE DEVUELVE MIERCOLES, JUEVES Y VIERNES SOLAMENTE!!!!!!!!!
-		
-		
-		return null;
+		ArrayList<Menu> menusSemana = new ArrayList<Menu>();
+		ArrayList<Menu> menus = gestionDatos.getMenus();
+				
+		for (int diaSemana = java.time.LocalDate.now().getDayOfWeek().getValue(); diaSemana < 6; diaSemana++) {
+			for (Menu menu : menus) {
+				if (menu.getDia() == diaSemana) {
+					menusSemana.add(menu);
+				}
+			}
+		}
+		return menusSemana;
 
 	}
-
-	
 
 	@Override
 	public void setGestionDatos(GestionDatos gestionDatos) {
 		this.gestionDatos = gestionDatos;
-
 	}
 
 	@Override
 	public int guardarMenu(Menu menu) {
-		//Cuando se guarde el menu en el fichero, se devuelve el id
-		//hacer menu.setId(   el id que nos devuelva     )
-		return 0;
-
+		return this.gestionDatos.guardarMenu(menu);
 	}
-	
 
 	@Override
 	public void asociarMenuDia(int idMenu, int diaSemana) {
@@ -66,10 +60,5 @@ public class GestionMenusImp implements GestionMenus {
 	public ArrayList<Plato> getPostres() {
 		return gestionDatos.getPostres();
 	}
-
-	
-	
-	
-	
 
 }

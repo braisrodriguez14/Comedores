@@ -7,16 +7,24 @@ public class MenuImp implements Menu {
 	private ArrayList<Plato> primeros;
 	private ArrayList<Plato> segundos;
 	private ArrayList<Plato> postres;
-	private String dia;
+	private int dia;
 	private int id;
-	
+
 	public MenuImp(ArrayList<Plato> primeros, ArrayList<Plato> segundos, ArrayList<Plato> postres) {
 		this.primeros = primeros;
 		this.segundos = segundos;
 		this.postres = postres;
-		this.dia = null;
+		this.dia = -1;
+		this.id = -1;
 	}
-	
+
+	public MenuImp(ArrayList<Plato> primeros, ArrayList<Plato> segundos, ArrayList<Plato> postres, int dia, int id) {
+		this.primeros = primeros;
+		this.segundos = segundos;
+		this.postres = postres;
+		this.dia = dia;
+		this.id = id;
+	}
 
 	public ArrayList<Plato> getPrimeros() {
 		return primeros;
@@ -42,11 +50,11 @@ public class MenuImp implements Menu {
 		this.postres = postres;
 	}
 
-	public String getDia() {
+	public int getDia() {
 		return dia;
 	}
 
-	public void setDia(String dia) {
+	public void setDia(int dia) {
 		this.dia = dia;
 	}
 
@@ -57,12 +65,5 @@ public class MenuImp implements Menu {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
-
-
-
-	
-
 
 }
