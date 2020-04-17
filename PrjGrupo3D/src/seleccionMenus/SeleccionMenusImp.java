@@ -1,3 +1,4 @@
+
 package seleccionMenus;
 
 import java.util.ArrayList;
@@ -11,35 +12,33 @@ public class SeleccionMenusImp implements SeleccionMenus {
 
 	private GestionMenus gestionMenus;
 	private GestionDatos gestionDatos;
-	
-	public SeleccionMenusImp() {
-		
+
+	public SeleccionMenusImp( ) {
+
 	}
-	
+
 	@Override
-	public void setGestionMenus(GestionMenus gestionMenus) {
+	public void setGestionMenus( GestionMenus gestionMenus ) {
 		this.gestionMenus = gestionMenus;
 
 	}
 
 	@Override
-	public void setGestionDatos(GestionDatos gestionDatos) {
+	public void setGestionDatos( GestionDatos gestionDatos ) {
 		this.gestionDatos = gestionDatos;
 
 	}
 
 	@Override
-	public ArrayList<Plato> getBebidas() {
-		return gestionDatos.getBebidas();
-		
+	public ArrayList< Plato > getBebidas( ) {
+		return gestionDatos.getBebidas( );
+
 	}
 
 	@Override
-	public Menu getMenuDia() {
-		return gestionMenus.getMenusSemana().get(0);
-		
-	}
+	public Menu getMenuDia( ) {
+		return gestionMenus.getMenusSemana( ).get( 0 );
 
-	
+	}
 
 }

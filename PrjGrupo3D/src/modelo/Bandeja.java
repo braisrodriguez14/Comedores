@@ -1,25 +1,26 @@
+
 package modelo;
 
 public interface Bandeja {
 
-	public int getId();
+	public int getId( );
 
-	public Plato getPrimero();
+	public Plato getPrimero( );
 
-	public Plato getSegundo();
+	public Plato getSegundo( );
 
-	public Plato getPostre();
+	public Plato getPostre( );
 
-	public Plato getBebida();
+	public Plato getBebida( );
 
-	public void setId(int idBandeja);
+	public void setId( int idBandeja );
 
-	public void setPrimero(Plato primero);
+	public void setPrimero( Plato primero );
 
-	public void setSegundo(Plato segundo);
+	public void setSegundo( Plato segundo );
 
-	public void setPostre(Plato postre);
+	public void setPostre( Plato postre );
 
-	public void setBebida(Plato bebida);
+	public void setBebida( Plato bebida );
 
 }

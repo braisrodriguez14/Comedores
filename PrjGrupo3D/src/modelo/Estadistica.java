@@ -1,19 +1,20 @@
+
 package modelo;
 
 public interface Estadistica {
-	
-	public int getIdFactura();
 
-	public int getValoracionPrimero();
+	public int getIdFactura( );
 
-	public int getValoracionSegundo();
+	public int getValoracionPrimero( );
 
-	public int getValoracionPostre();
+	public int getValoracionSegundo( );
 
-	public String getHoraAsignacion();
+	public int getValoracionPostre( );
 
-	public String getHoraDevolucion();
+	public String getHoraAsignacion( );
 
-	public Bandeja getBandeja();
+	public String getHoraDevolucion( );
+
+	public Bandeja getBandeja( );
 
 }

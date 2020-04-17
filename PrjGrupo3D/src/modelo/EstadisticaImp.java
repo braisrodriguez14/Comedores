@@ -1,3 +1,4 @@
+
 package modelo;
 
 public class EstadisticaImp implements Estadistica {
@@ -9,12 +10,10 @@ public class EstadisticaImp implements Estadistica {
 	private String horaAsignacion;
 	private String horaDevolucion;
 	private Bandeja bandeja;
-	
-	
 
-	public EstadisticaImp(int idFactura, int valoracionPrimero, int valoracionSegundo, int valoracionPostre,
-			String horaAsignacion, String horaDevolucion, Bandeja bandeja) {
-		
+	public EstadisticaImp( int idFactura, int valoracionPrimero, int valoracionSegundo, int valoracionPostre,
+			String horaAsignacion, String horaDevolucion, Bandeja bandeja ) {
+
 		this.idFactura = idFactura;
 		this.valoracionPrimero = valoracionPrimero;
 		this.valoracionSegundo = valoracionSegundo;
@@ -24,31 +23,31 @@ public class EstadisticaImp implements Estadistica {
 		this.bandeja = bandeja;
 	}
 
-	public int getIdFactura() {
+	public int getIdFactura( ) {
 		return idFactura;
 	}
 
-	public int getValoracionPrimero() {
+	public int getValoracionPrimero( ) {
 		return valoracionPrimero;
 	}
 
-	public int getValoracionSegundo() {
+	public int getValoracionSegundo( ) {
 		return valoracionSegundo;
 	}
 
-	public int getValoracionPostre() {
+	public int getValoracionPostre( ) {
 		return valoracionPostre;
 	}
 
-	public String getHoraAsignacion() {
+	public String getHoraAsignacion( ) {
 		return horaAsignacion;
 	}
 
-	public String getHoraDevolucion() {
+	public String getHoraDevolucion( ) {
 		return horaDevolucion;
 	}
 
-	public Bandeja getBandeja() {
+	public Bandeja getBandeja( ) {
 		return bandeja;
 	}
 

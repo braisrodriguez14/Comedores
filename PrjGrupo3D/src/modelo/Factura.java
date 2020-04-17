@@ -1,15 +1,16 @@
+
 package modelo;
 
 public interface Factura {
 
-	public int getId();
-	
-	public int getIdMenu();
+	public int getId( );
 
-	public String getDia();
+	public int getIdMenu( );
 
-	public int getIdVale();
+	public String getDia( );
 
-	public void setId(int idFactura);
+	public int getIdVale( );
+
+	public void setId( int idFactura );
 
 }
