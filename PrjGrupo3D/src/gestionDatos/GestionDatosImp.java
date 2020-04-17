@@ -235,7 +235,7 @@ public class GestionDatosImp implements GestionDatos {
 		try {
 			fw = new FileWriter(new File("Menus.txt"), true);
 			BufferedWriter bw = new BufferedWriter(fw);
-			bw.append(linea);
+			bw.append(linea + "\n");
 			bw.close();
 			fw.close();
 		} catch (IOException e) {
@@ -253,8 +253,7 @@ public class GestionDatosImp implements GestionDatos {
 			FileReader fr = new FileReader("Menus.txt");
 			BufferedReader br = new BufferedReader(fr);
 			String linea;
-			boolean leer = ((linea = br.readLine()) != null);
-			while (leer) {
+			while ((linea = br.readLine()) != null) {
 				String[] campos = linea.split("#");
 				auxiliar = campos[0].trim();
 				auxiliar += " # " + "-1";
@@ -267,11 +266,7 @@ public class GestionDatosImp implements GestionDatos {
 				auxiliar += " # " + campos[8].trim();
 				auxiliar += " # " + campos[9].trim();
 				auxiliar += " # " + campos[10].trim();
-				if (leer = ((linea = br.readLine()) != null)) {
-					menus += auxiliar + "\n";
-				} else {
-					menus += auxiliar;
-				}
+				menus += auxiliar + "\n";
 			}
 			br.close();
 			fr.close();
@@ -289,46 +284,50 @@ public class GestionDatosImp implements GestionDatos {
 
 	@Override
 	public void asociarMenuDia(int idMenu, int diaSemana) {
-		String menus = "";
-		String auxiliar = null;
-		try {
-			FileReader fr = new FileReader("Menus.txt");
-			BufferedReader br = new BufferedReader(fr);
-			String linea;
-			boolean leer = ((linea = br.readLine()) != null);
-			while (leer) {
-				if (linea.split("#")[0].trim().equals(String.valueOf(idMenu))) {
-					String[] campos = linea.split("#");
-					auxiliar = campos[0].trim();
-					auxiliar += " # " + diaSemana;
-					auxiliar += " # " + campos[2].trim();
-					auxiliar += " # " + campos[3].trim();
-					auxiliar += " # " + campos[4].trim();
-					auxiliar += " # " + campos[5].trim();
-					auxiliar += " # " + campos[6].trim();
-					auxiliar += " # " + campos[7].trim();
-					auxiliar += " # " + campos[8].trim();
-					auxiliar += " # " + campos[9].trim();
-					auxiliar += " # " + campos[10].trim();
-				} else {
-					auxiliar = linea;
-				}
-				if (leer = ((linea = br.readLine()) != null)) {
-					menus += auxiliar + "\n";
-				} else {
-					menus += auxiliar;
-				}
+		boolean existe = false;
+		ArrayList<Menu> listaMenus = this.getMenus();
+		for (Menu menu : listaMenus) {
+			if (menu.getDia() == diaSemana) {
+				existe = true;
 			}
-			br.close();
-			fr.close();
+		}
+		if (!existe) {
+			String menus = "";
+			String auxiliar = null;
+			try {
+				FileReader fr = new FileReader("Menus.txt");
+				BufferedReader br = new BufferedReader(fr);
+				String linea;
+				while ((linea = br.readLine()) != null) {
+					if (linea.split("#")[0].trim().equals(String.valueOf(idMenu))) {
+						String[] campos = linea.split("#");
+						auxiliar = campos[0].trim();
+						auxiliar += " # " + diaSemana;
+						auxiliar += " # " + campos[2].trim();
+						auxiliar += " # " + campos[3].trim();
+						auxiliar += " # " + campos[4].trim();
+						auxiliar += " # " + campos[5].trim();
+						auxiliar += " # " + campos[6].trim();
+						auxiliar += " # " + campos[7].trim();
+						auxiliar += " # " + campos[8].trim();
+						auxiliar += " # " + campos[9].trim();
+						auxiliar += " # " + campos[10].trim();
+					} else {
+						auxiliar = linea;
+					}
+					menus += auxiliar + "\n";
+				}
+				br.close();
+				fr.close();
 
-			FileWriter fw = new FileWriter(new File("Menus.txt"), false);
-			BufferedWriter bw = new BufferedWriter(fw);
-			bw.write(menus, 0, menus.length());
-			bw.close();
-			fw.close();
-		} catch (Exception e) {
-			System.err.println(e);
+				FileWriter fw = new FileWriter(new File("Menus.txt"), false);
+				BufferedWriter bw = new BufferedWriter(fw);
+				bw.write(menus, 0, menus.length());
+				bw.close();
+				fw.close();
+			} catch (Exception e) {
+				System.err.println(e);
+			}
 		}
 	}
 
@@ -384,7 +383,7 @@ public class GestionDatosImp implements GestionDatos {
 		try {
 			fw = new FileWriter(new File("Facturas.txt"), true);
 			BufferedWriter bw = new BufferedWriter(fw);
-			bw.append(linea);
+			bw.append(linea + "\n");
 			bw.close();
 			fw.close();
 		} catch (IOException e) {
@@ -455,7 +454,7 @@ public class GestionDatosImp implements GestionDatos {
 		try {
 			fw = new FileWriter(new File("BaseEstadistica.txt"), true);
 			BufferedWriter bw = new BufferedWriter(fw);
-			bw.append(linea);
+			bw.append(linea + "\n");
 			bw.close();
 			fw.close();
 		} catch (IOException e) {
@@ -471,8 +470,7 @@ public class GestionDatosImp implements GestionDatos {
 			FileReader fr = new FileReader("BaseEstadistica.txt");
 			BufferedReader br = new BufferedReader(fr);
 			String linea;
-			boolean leer = ((linea = br.readLine()) != null);
-			while (leer) {
+			while ((linea = br.readLine()) != null) {
 				if (linea.split("#")[6].trim().equals(String.valueOf(idBandeja))
 						&& linea.split("#")[5].trim().equals("-1")) {
 					String[] campos = linea.split("#");
@@ -481,7 +479,8 @@ public class GestionDatosImp implements GestionDatos {
 					auxiliar += " # " + campos[2].trim();
 					auxiliar += " # " + campos[3].trim();
 					auxiliar += " # " + campos[4].trim();
-					auxiliar += " # " + java.time.LocalTime.now().getHour() + ":" + java.time.LocalTime.now().getMinute();
+					auxiliar += " # " + java.time.LocalTime.now().getHour() + ":"
+							+ java.time.LocalTime.now().getMinute();
 					auxiliar += " # " + campos[6].trim();
 					auxiliar += " # " + campos[7].trim();
 					auxiliar += " # " + campos[8].trim();
@@ -490,11 +489,7 @@ public class GestionDatosImp implements GestionDatos {
 				} else {
 					auxiliar = linea;
 				}
-				if (leer = ((linea = br.readLine()) != null)) {
-					baseEstadistica += auxiliar + "\n";
-				} else {
-					baseEstadistica += auxiliar;
-				}
+				baseEstadistica += auxiliar + "\n";
 			}
 			br.close();
 			fr.close();
@@ -518,8 +513,7 @@ public class GestionDatosImp implements GestionDatos {
 			FileReader fr = new FileReader("BaseEstadistica.txt");
 			BufferedReader br = new BufferedReader(fr);
 			String linea;
-			boolean leer = ((linea = br.readLine()) != null);
-			while (leer) {
+			while ((linea = br.readLine()) != null) {
 				if (linea.split("#")[0].trim().equals(String.valueOf(idFactura))) {
 					String[] campos = linea.split("#");
 					auxiliar = campos[0].trim();
@@ -536,11 +530,7 @@ public class GestionDatosImp implements GestionDatos {
 				} else {
 					auxiliar = linea;
 				}
-				if (leer = ((linea = br.readLine()) != null)) {
-					baseEstadistica += auxiliar + "\n";
-				} else {
-					baseEstadistica += auxiliar;
-				}
+				baseEstadistica += auxiliar + "\n";
 			}
 			br.close();
 			fr.close();
