@@ -1,0 +1,20 @@
+Ensaladilla Rusa # PRIMERO
+Croquetas # PRIMERO
+Empanada # PRIMERO
+Caldo Gallego # PRIMERO
+Sushi # PRIMERO
+Pasta Carbonara # SEGUNDO
+Cocido Gallego # SEGUNDO
+Paella # SEGUNDO
+Milanesa con patatas # SEGUNDO
+Salmón cocido con patatas y guisantes # SEGUNDO
+Natillas # POSTRE
+Yogur de sabores # POSTRE
+Fruta # POSTRE
+Helado # POSTRE
+Flan con Nata # POSTRE
+Agua # BEBIDA
+CocaCola # BEBIDA
+Zumo # BEBIDA
+Nestea # BEBIDA
+Aquarius # BEBIDA

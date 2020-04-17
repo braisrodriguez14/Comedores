@@ -1,0 +1,6 @@
+0 # 5 # Ensaladilla Rusa # Croquetas # Empanada # Pasta Carbonara # Cocido Gallego # Paella # Natillas # Yogur de sabores # Fruta
+1 # -1 # Ensaladilla Rusa # Croquetas # Empanada # Pasta Carbonara # Cocido Gallego # Paella # Natillas # Yogur de sabores # Fruta
+2 # -1 # Ensaladilla Rusa # Croquetas # Empanada # Pasta Carbonara # Cocido Gallego # Paella # Natillas # Yogur de sabores # Fruta
+3 # -1 # Ensaladilla Rusa # Croquetas # Empanada # Pasta Carbonara # Cocido Gallego # Paella # Natillas # Yogur de sabores # Fruta
+4 # -1 # Ensaladilla Rusa # Croquetas # Empanada # Pasta Carbonara # Cocido Gallego # Paella # Natillas # Yogur de sabores # Fruta
+5 # -1 # Ensaladilla Rusa # Croquetas # Empanada # Pasta Carbonara # Cocido Gallego # Paella # Natillas # Yogur de sabores # Fruta
