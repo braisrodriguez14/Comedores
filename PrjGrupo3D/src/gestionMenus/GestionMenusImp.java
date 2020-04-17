@@ -18,8 +18,11 @@ public class GestionMenusImp implements GestionMenus {
 	public ArrayList<Menu> getMenusSemana() {
 		ArrayList<Menu> menusSemana = new ArrayList<Menu>();
 		ArrayList<Menu> menus = gestionDatos.getMenus();
-				
-		for (int diaSemana = java.time.LocalDate.now().getDayOfWeek().getValue(); diaSemana < 6; diaSemana++) {
+		int diaSemana = java.time.LocalDate.now().getDayOfWeek().getValue();
+		if (diaSemana> 5) {
+			diaSemana=1;
+		}		
+		for (; diaSemana < 6; diaSemana++) {
 			for (Menu menu : menus) {
 				if (menu.getDia() == diaSemana) {
 					menusSemana.add(menu);

@@ -2,13 +2,24 @@ package main;
 
 import java.util.ArrayList;
 
-import analisisEstadisticas.*;
-import gestionDatos.*;
-import gestionMenus.*;
-import gestionPagosValoraciones.*;
-import seleccionMenus.*;
-import sensores.*;
-import modelo.*;
+import analisisEstadisticas.AnalisisEstadisticas;
+import analisisEstadisticas.AnalisisEstadisticasImp;
+import gestionDatos.GestionDatos;
+import gestionDatos.GestionDatosImp;
+import gestionMenus.GestionMenus;
+import gestionMenus.GestionMenusImp;
+import gestionPagosValoraciones.GestionPagosValoraciones;
+import gestionPagosValoraciones.GestionPagosValoracionesImp;
+import modelo.Bandeja;
+import modelo.BandejaImp;
+import modelo.Factura;
+import modelo.Menu;
+import modelo.MenuImp;
+import modelo.Plato;
+import seleccionMenus.SeleccionMenus;
+import seleccionMenus.SeleccionMenusImp;
+import sensores.Sensor;
+import sensores.SensorImp;
 
 public class Main {
 	
@@ -32,6 +43,8 @@ public class Main {
 		analisisEstadisticas.setGestionDatos(gestionDatos);
 		
 		
+		
+	
 		
 		
 							//A partir de aqui son los metodos de las GUI
@@ -117,23 +130,30 @@ public class Main {
 	
 
 						//GUI VISION MENUS (ESTADISTICAS)
+		Plato plato;		
+		
+		plato = analisisEstadisticas.platoMasSelecionado();
+		System.out.println("Plato Mas Selecionado: " + plato.getNombre());
+		
+		plato = analisisEstadisticas.platoMenosSelecionado();
+		System.out.println("Plato Menos Selecionado: " + plato.getNombre());
+		
+		plato = analisisEstadisticas.platoMejorValorado();
+		System.out.println("Plato Mejor Valorado: " + plato.getNombre());
+		
+		plato = analisisEstadisticas.platoPeorValorado();
+		System.out.println("Plato Peor Valorado: " + plato.getNombre());
+		
+		
 		/*
-		analisisEstadisticas.platoMasSelecionado();
-		
-		analisisEstadisticas.platoMenosSelecionado();
-		
-		analisisEstadisticas.platoMejorValorado();
-		
-		analisisEstadisticas.platoPeorValorado();
-		
 		analisisEstadisticas.ocupacionDiaSemana(5);
 		
 		analisisEstadisticas.horaMasFrecuente();
-		
+		*/
 		analisisEstadisticas.duracionMediaComida();
 		
-		analisisEstadisticas.rankingPlatos();
-		*/
+		System.out.println(analisisEstadisticas.rankingPlatos());
+		
 	
 	}
 	
