@@ -17,20 +17,25 @@ public class GestionMenusImp implements GestionMenus {
 
 	@Override
 	public ArrayList< Menu > getMenusSemana( ) {
-		ArrayList< Menu > menusSemana = new ArrayList< Menu >( );
-		ArrayList< Menu > menus = gestionDatos.getMenus( );
-		int diaSemana = java.time.LocalDate.now( ).getDayOfWeek( ).getValue( );
-		if( diaSemana > 5 ) {
-			diaSemana = 1;
-		}
-		for( ; diaSemana < 6; diaSemana++ ) {
-			for( Menu menu : menus ) {
-				if( menu.getDia( ) == diaSemana ) {
-					menusSemana.add( menu );
+		if( gestionDatos!=null ) {
+			ArrayList< Menu > menusSemana = new ArrayList< Menu >( );
+			ArrayList< Menu > menus = gestionDatos.getMenus( );
+			int diaSemana = java.time.LocalDate.now( ).getDayOfWeek( ).getValue( );
+			if( diaSemana > 5 ) {
+				diaSemana = 1;
+			}
+			for( ; diaSemana < 6; diaSemana++ ) {
+				for( Menu menu : menus ) {
+					if( menu.getDia( ) == diaSemana ) {
+						menusSemana.add( menu );
+					}
 				}
 			}
+			return menusSemana;
 		}
-		return menusSemana;
+		else {
+			return null;
+		}
 
 	}
 
@@ -41,28 +46,57 @@ public class GestionMenusImp implements GestionMenus {
 
 	@Override
 	public int guardarMenu( Menu menu ) {
-		return this.gestionDatos.guardarMenu( menu );
+		if( gestionDatos!=null ) {
+			return this.gestionDatos.guardarMenu( menu );			
+		}
+		else {
+			return -1;
+		}
 	}
 
 	@Override
 	public void asociarMenuDia( int idMenu, int diaSemana ) {
-		gestionDatos.asociarMenuDia( idMenu, diaSemana );
+		if( gestionDatos!=null ) {
+			gestionDatos.asociarMenuDia( idMenu, diaSemana );
+		}
 
 	}
 
+	public void restablecerDias( ) {
+		if( gestionDatos!=null ) {
+			gestionDatos.restablecerDias( );
+		}
+	}
+	
+
 	@Override
 	public ArrayList< Plato > getPrimeros( ) {
-		return gestionDatos.getPrimeros( );
+		if( gestionDatos!=null ) {
+			return gestionDatos.getPrimeros( );
+		}
+		else {
+			return null;
+		}
 	}
 
 	@Override
 	public ArrayList< Plato > getSegundos( ) {
-		return gestionDatos.getSegundos( );
+		if( gestionDatos!=null ) {
+			return gestionDatos.getSegundos( );
+		}
+		else {
+			return null;
+		}
 	}
 
 	@Override
 	public ArrayList< Plato > getPostres( ) {
-		return gestionDatos.getPostres( );
+		if( gestionDatos!=null ) {
+			return gestionDatos.getPostres( );
+		}
+		else {
+			return null;
+		}
 	}
 
 }

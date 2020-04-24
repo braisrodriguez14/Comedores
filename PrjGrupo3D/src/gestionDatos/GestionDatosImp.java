@@ -23,11 +23,10 @@ import modelo.PlatoImp;
 public class GestionDatosImp implements GestionDatos {
 
 	public GestionDatosImp( ) {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public ArrayList< Plato > getPlatos( ) {
+	public synchronized ArrayList< Plato > getPlatos( ) {
 		ArrayList< Plato > platos = new ArrayList<>( );
 
 		try {
@@ -48,7 +47,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public ArrayList< Plato > getPrimeros( ) {
+	public synchronized ArrayList< Plato > getPrimeros( ) {
 		ArrayList< Plato > primeros = new ArrayList<>( );
 
 		try {
@@ -71,7 +70,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public ArrayList< Plato > getSegundos( ) {
+	public synchronized ArrayList< Plato > getSegundos( ) {
 		ArrayList< Plato > segundos = new ArrayList<>( );
 
 		try {
@@ -94,7 +93,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public ArrayList< Plato > getPostres( ) {
+	public synchronized ArrayList< Plato > getPostres( ) {
 		ArrayList< Plato > postres = new ArrayList<>( );
 
 		try {
@@ -117,7 +116,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public ArrayList< Plato > getBebidas( ) {
+	public synchronized ArrayList< Plato > getBebidas( ) {
 		ArrayList< Plato > bebidas = new ArrayList<>( );
 
 		try {
@@ -140,7 +139,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public Plato getPlato( String nombre ) {
+	public synchronized Plato getPlato( String nombre ) {
 		Plato plato = null;
 
 		try {
@@ -163,7 +162,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public ArrayList< Menu > getMenus( ) {
+	public synchronized ArrayList< Menu > getMenus( ) {
 		ArrayList< Menu > menus = new ArrayList<>( );
 		ArrayList< Plato > primeros = new ArrayList<>( );
 		ArrayList< Plato > segundos = new ArrayList<>( );
@@ -205,7 +204,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public Menu getMenu( int idMenu ) {
+	public synchronized Menu getMenu( int idMenu ) {
 		ArrayList< Menu > menus = this.getMenus( );
 		for( Menu menu : menus ) {
 			if( menu.getId( ) == idMenu ) {
@@ -216,7 +215,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public int guardarMenu( Menu menu ) {
+	public synchronized int guardarMenu( Menu menu ) {
 		ArrayList< Menu > menus = this.getMenus( );
 		int idMenu = -1;
 		for( Menu menuTemp : menus ) {
@@ -255,7 +254,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public void restablecerDias( ) {
+	public synchronized void restablecerDias( ) {
 		String menus = "";
 		String auxiliar = null;
 		try {
@@ -293,7 +292,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public void asociarMenuDia( int idMenu, int diaSemana ) {
+	public synchronized void asociarMenuDia( int idMenu, int diaSemana ) {
 		boolean existe = false;
 		ArrayList< Menu > listaMenus = this.getMenus( );
 		for( Menu menu : listaMenus ) {
@@ -344,7 +343,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public ArrayList< Factura > getFacturas( ) {
+	public synchronized ArrayList< Factura > getFacturas( ) {
 		ArrayList< Factura > facturas = new ArrayList<>( );
 		int idFactura;
 		int idMenu;
@@ -375,7 +374,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public void guardarFactura( Factura factura ) {
+	public synchronized void guardarFactura( Factura factura ) {
 		ArrayList< Factura > facturas = this.getFacturas( );
 		int idFactura = -1;
 		for( Factura facturaTemp : facturas ) {
@@ -407,7 +406,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public ArrayList< Estadistica > getEstadisticas( ) {
+	public synchronized ArrayList< Estadistica > getEstadisticas( ) {
 		ArrayList< Estadistica > estadisticas = new ArrayList<>( );
 		int idFactura;
 		int valoracionPrimero;
@@ -450,7 +449,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public void guardarComida( Bandeja bandeja, int idFactura ) {
+	public synchronized void guardarComida( Bandeja bandeja, int idFactura ) {
 		String linea;
 
 		linea = String.valueOf( idFactura );
@@ -479,7 +478,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public void devolverBandeja( int idBandeja ) {
+	public synchronized void devolverBandeja( int idBandeja ) {
 		String baseEstadistica = "";
 		String auxiliar = null;
 		try {
@@ -524,7 +523,7 @@ public class GestionDatosImp implements GestionDatos {
 	}
 
 	@Override
-	public void valorar( int idFactura, int valoracionPrimero, int valoracionSegundo, int valoracionPostre ) {
+	public synchronized void valorar( int idFactura, int valoracionPrimero, int valoracionSegundo, int valoracionPostre ) {
 		String baseEstadistica = "";
 		String auxiliar = null;
 		try {

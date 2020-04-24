@@ -26,8 +26,7 @@ public class Main {
 
 	public static void main( String[ ] args ) {
 
-		
-			// Creamos los subsistemas
+		// Creamos los subsistemas
 
 		GestionDatos gestionDatos = new GestionDatosImp( );
 		GestionMenus gestionMenus = new GestionMenusImp( );
@@ -43,12 +42,10 @@ public class Main {
 		gestionPagosValoraciones.setSensor( sensor );
 		analisisEstadisticas.setGestionDatos( gestionDatos );
 
-		
-		
+		// GUI DEFINICION DE MENUS
 
-			// GUI DEFINICION DE MENUS
-
-		// En la GUI se mostraria una lista para los primeros, otra para los segundos y postres
+		// En la GUI se mostraria una lista para los primeros, otra para los segundos y
+		// postres
 		ArrayList< Plato > primeros = gestionMenus.getPrimeros( );
 		ArrayList< Plato > segundos = gestionMenus.getSegundos( );
 		ArrayList< Plato > postres = gestionMenus.getPostres( );
@@ -82,15 +79,14 @@ public class Main {
 		// Se recuperan los menus de cada dia de la semana
 		ArrayList< Menu > menusSemana = gestionMenus.getMenusSemana( );
 
-		
-		
-			// GUI SELECCION DE MENUS
+		// GUI SELECCION DE MENUS
 
 		// Se obtiene el menu del dia correspondiente al dia de hoy y todas las bebidas
 		Menu menuDia = seleccionMenus.getMenuDia( );
 		ArrayList< Plato > bebidas = seleccionMenus.getBebidas( );
 
-		// Se crea la bandeja (lo que vamos a comer) a partir de el menu de el dia y las bebidas
+		// Se crea la bandeja (lo que vamos a comer) a partir de el menu de el dia y las
+		// bebidas
 		Plato primero = menuDia.getPrimeros( ).get( 0 );
 		Plato segundo = menuDia.getSegundos( ).get( 1 );
 		Plato postre = menuDia.getPostres( ).get( 2 );
@@ -102,13 +98,16 @@ public class Main {
 		Factura factura = gestionPagosValoraciones.pagar( bandeja, menuDia.getId( ) );
 
 		// usuario.comer(bandeja); #EasterEGG
+		try {
+			Thread.sleep( 100 * 1000 );
+		}
+		catch( InterruptedException excepcion ) {
+		}
 
 		// Se devuelve la bandeja y el usuario se marcha del comedor
 		gestionPagosValoraciones.devolverBandeja( bandeja.getId( ) );
 
-		
-		
-			// GUI VALORACIONES DE MENUS
+		// GUI VALORACIONES DE MENUS
 
 		int valoracionPrimero = 5;
 		int valoracionSegundo = 4;
@@ -116,10 +115,8 @@ public class Main {
 
 		gestionPagosValoraciones.valorar( factura.getId( ), valoracionPrimero, valoracionSegundo, valoracionPostre );
 
-		
-		
-			// GUI VISION MENUS (ESTADISTICAS)
-		
+		// GUI VISION MENUS (ESTADISTICAS)
+
 		Plato plato;
 
 		plato = analisisEstadisticas.platoMasSelecionado( );
@@ -134,15 +131,17 @@ public class Main {
 		plato = analisisEstadisticas.platoPeorValorado( );
 		System.out.println( "Plato Peor Valorado: " + plato.getNombre( ) );
 
-		/*
-		analisisEstadisticas.ocupacionDiaSemana(5);
+		float ocupacionDiaSemana = analisisEstadisticas.ocupacionDiaSemana(5);
+		System.out.println( "Ocupacion viernes: " + ocupacionDiaSemana*100.0f+"%" );
 		
-		 */
-		
-		System.out.println( analisisEstadisticas.horaMasFrecuente( ) );
-		
-		System.out.println( analisisEstadisticas.duracionMediaComida( ) );
-		
+		int horaMasFrecuente = analisisEstadisticas.horaMasFrecuente( );
+		System.out.println( "Hora mas frecuente: " + horaMasFrecuente );
+
+		float duracionMediaComida = analisisEstadisticas.duracionMediaComida( );
+		int min = (int) duracionMediaComida;
+		int sec = (int) ( ( duracionMediaComida - (float) min ) * 60.0f );
+		System.out.println( "Duracion media comida: " + min + " minutos y " + sec + " segundos" );
+
 		System.out.println( analisisEstadisticas.rankingPlatos( ) );
 
 	}

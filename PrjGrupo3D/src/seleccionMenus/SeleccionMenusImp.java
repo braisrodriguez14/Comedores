@@ -20,24 +20,31 @@ public class SeleccionMenusImp implements SeleccionMenus {
 	@Override
 	public void setGestionMenus( GestionMenus gestionMenus ) {
 		this.gestionMenus = gestionMenus;
-
 	}
 
 	@Override
 	public void setGestionDatos( GestionDatos gestionDatos ) {
 		this.gestionDatos = gestionDatos;
-
 	}
 
 	@Override
 	public ArrayList< Plato > getBebidas( ) {
-		return gestionDatos.getBebidas( );
-
+		if( gestionDatos != null ) {
+			return gestionDatos.getBebidas( );
+		}
+		else {
+			return null;
+		}
 	}
 
 	@Override
 	public Menu getMenuDia( ) {
-		return gestionMenus.getMenusSemana( ).get( 0 );
+		if( gestionMenus != null ) {
+			return gestionMenus.getMenusSemana( ).get( 0 );
+		}
+		else {
+			return null;
+		}
 
 	}
 

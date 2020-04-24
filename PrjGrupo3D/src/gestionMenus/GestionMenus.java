@@ -17,6 +17,8 @@ public interface GestionMenus {
 
 	public void asociarMenuDia( int idMenu, int diaSemana );
 
+	public void restablecerDias( );
+
 	public ArrayList< Plato > getPrimeros( );
 
 	public ArrayList< Plato > getSegundos( );

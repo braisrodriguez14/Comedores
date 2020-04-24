@@ -3,7 +3,6 @@ package gestionPagosValoraciones;
 
 import gestionDatos.GestionDatos;
 import modelo.Bandeja;
-import modelo.Estadistica;
 import modelo.Factura;
 import sensores.Sensor;
 
