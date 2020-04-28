@@ -140,25 +140,28 @@ public class GestionDatosImp implements GestionDatos {
 
 	@Override
 	public synchronized Plato getPlato( String nombre ) {
-		Plato plato = null;
+		if( nombre!=null ) {
+			Plato plato = null;
 
-		try {
-			FileReader fr = new FileReader( "Platos.txt" );
-			BufferedReader br = new BufferedReader( fr );
-			String linea;
-			while( ( linea = br.readLine( ) ) != null ) {
-				if( linea.split( "#" )[ 0 ].trim( ).equals( nombre ) ) {
-					plato = new PlatoImp( linea.split( "#" )[ 0 ].trim( ), linea.split( "#" )[ 1 ].trim( ) );
+			try {
+				FileReader fr = new FileReader( "Platos.txt" );
+				BufferedReader br = new BufferedReader( fr );
+				String linea;
+				while( ( linea = br.readLine( ) ) != null ) {
+					if( linea.split( "#" )[ 0 ].trim( ).equals( nombre ) ) {
+						plato = new PlatoImp( linea.split( "#" )[ 0 ].trim( ), linea.split( "#" )[ 1 ].trim( ) );
+					}
 				}
+				br.close( );
+				fr.close( );
 			}
-			br.close( );
-			fr.close( );
-		}
-		catch( Exception e ) {
-			System.err.println( e );
-		}
+			catch( Exception e ) {
+				System.err.println( e );
+			}
 
-		return plato;
+			return plato;
+		}
+		return null;
 	}
 
 	@Override
@@ -216,41 +219,44 @@ public class GestionDatosImp implements GestionDatos {
 
 	@Override
 	public synchronized int guardarMenu( Menu menu ) {
-		ArrayList< Menu > menus = this.getMenus( );
-		int idMenu = -1;
-		for( Menu menuTemp : menus ) {
-			if( menuTemp.getId( ) > idMenu ) {
-				idMenu = menuTemp.getId( );
+		if( menu != null ) {
+			ArrayList< Menu > menus = this.getMenus( );
+			int idMenu = -1;
+			for( Menu menuTemp : menus ) {
+				if( menuTemp.getId( ) > idMenu ) {
+					idMenu = menuTemp.getId( );
+				}
 			}
-		}
-		idMenu += 1;
+			idMenu += 1;
 
-		String linea;
-		linea = String.valueOf( idMenu );
-		linea += " # " + menu.getDia( );
-		linea += " # " + menu.getPrimeros( ).get( 0 ).getNombre( );
-		linea += " # " + menu.getPrimeros( ).get( 1 ).getNombre( );
-		linea += " # " + menu.getPrimeros( ).get( 2 ).getNombre( );
-		linea += " # " + menu.getSegundos( ).get( 0 ).getNombre( );
-		linea += " # " + menu.getSegundos( ).get( 1 ).getNombre( );
-		linea += " # " + menu.getSegundos( ).get( 2 ).getNombre( );
-		linea += " # " + menu.getPostres( ).get( 0 ).getNombre( );
-		linea += " # " + menu.getPostres( ).get( 1 ).getNombre( );
-		linea += " # " + menu.getPostres( ).get( 2 ).getNombre( );
+			String linea;
+			linea = String.valueOf( idMenu );
+			linea += " # " + menu.getDia( );
+			linea += " # " + menu.getPrimeros( ).get( 0 ).getNombre( );
+			linea += " # " + menu.getPrimeros( ).get( 1 ).getNombre( );
+			linea += " # " + menu.getPrimeros( ).get( 2 ).getNombre( );
+			linea += " # " + menu.getSegundos( ).get( 0 ).getNombre( );
+			linea += " # " + menu.getSegundos( ).get( 1 ).getNombre( );
+			linea += " # " + menu.getSegundos( ).get( 2 ).getNombre( );
+			linea += " # " + menu.getPostres( ).get( 0 ).getNombre( );
+			linea += " # " + menu.getPostres( ).get( 1 ).getNombre( );
+			linea += " # " + menu.getPostres( ).get( 2 ).getNombre( );
 
-		FileWriter fw;
-		try {
-			fw = new FileWriter( new File( "Menus.txt" ), true );
-			BufferedWriter bw = new BufferedWriter( fw );
-			bw.append( linea + "\n" );
-			bw.close( );
-			fw.close( );
-		}
-		catch( IOException e ) {
-			System.err.println( e );
-		}
+			FileWriter fw;
+			try {
+				fw = new FileWriter( new File( "Menus.txt" ), true );
+				BufferedWriter bw = new BufferedWriter( fw );
+				bw.append( linea + "\n" );
+				bw.close( );
+				fw.close( );
+			}
+			catch( IOException e ) {
+				System.err.println( e );
+			}
 
-		return idMenu;
+			return idMenu;
+		}
+		return -1;
 	}
 
 	@Override
@@ -300,7 +306,7 @@ public class GestionDatosImp implements GestionDatos {
 				existe = true;
 			}
 		}
-		if( !existe ) {
+		if( !existe && diaSemana >= 1 && diaSemana <= 5 ) {
 			String menus = "";
 			String auxiliar = null;
 			try {
@@ -375,32 +381,34 @@ public class GestionDatosImp implements GestionDatos {
 
 	@Override
 	public synchronized void guardarFactura( Factura factura ) {
-		ArrayList< Factura > facturas = this.getFacturas( );
-		int idFactura = -1;
-		for( Factura facturaTemp : facturas ) {
-			if( facturaTemp.getId( ) > idFactura ) {
-				idFactura = facturaTemp.getId( );
+		if( factura != null ) {
+			ArrayList< Factura > facturas = this.getFacturas( );
+			int idFactura = -1;
+			for( Factura facturaTemp : facturas ) {
+				if( facturaTemp.getId( ) > idFactura ) {
+					idFactura = facturaTemp.getId( );
+				}
 			}
-		}
-		idFactura += 1;
-		factura.setId( idFactura );
+			idFactura += 1;
+			factura.setId( idFactura );
 
-		String linea;
-		linea = String.valueOf( factura.getId( ) );
-		linea += " # " + factura.getIdMenu( );
-		linea += " # " + factura.getDia( );
-		linea += " # " + factura.getIdVale( );
+			String linea;
+			linea = String.valueOf( factura.getId( ) );
+			linea += " # " + factura.getIdMenu( );
+			linea += " # " + factura.getDia( );
+			linea += " # " + factura.getIdVale( );
 
-		FileWriter fw;
-		try {
-			fw = new FileWriter( new File( "Facturas.txt" ), true );
-			BufferedWriter bw = new BufferedWriter( fw );
-			bw.append( linea + "\n" );
-			bw.close( );
-			fw.close( );
-		}
-		catch( IOException e ) {
-			System.err.println( e );
+			FileWriter fw;
+			try {
+				fw = new FileWriter( new File( "Facturas.txt" ), true );
+				BufferedWriter bw = new BufferedWriter( fw );
+				bw.append( linea + "\n" );
+				bw.close( );
+				fw.close( );
+			}
+			catch( IOException e ) {
+				System.err.println( e );
+			}
 		}
 
 	}
@@ -450,30 +458,32 @@ public class GestionDatosImp implements GestionDatos {
 
 	@Override
 	public synchronized void guardarComida( Bandeja bandeja, int idFactura ) {
-		String linea;
+		if( bandeja != null && idFactura >= 0 ) {
+			String linea;
 
-		linea = String.valueOf( idFactura );
-		linea += " # -1";
-		linea += " # -1";
-		linea += " # -1";
-		linea += " # " + java.time.LocalTime.now( ).getHour( ) + ":" + java.time.LocalTime.now( ).getMinute( );
-		linea += " # -1";
-		linea += " # " + String.valueOf( bandeja.getId( ) );
-		linea += " # " + bandeja.getPrimero( ).getNombre( );
-		linea += " # " + bandeja.getSegundo( ).getNombre( );
-		linea += " # " + bandeja.getPostre( ).getNombre( );
-		linea += " # " + bandeja.getBebida( ).getNombre( );
+			linea = String.valueOf( idFactura );
+			linea += " # -1";
+			linea += " # -1";
+			linea += " # -1";
+			linea += " # " + java.time.LocalTime.now( ).getHour( ) + ":" + java.time.LocalTime.now( ).getMinute( );
+			linea += " # -1";
+			linea += " # " + String.valueOf( bandeja.getId( ) );
+			linea += " # " + bandeja.getPrimero( ).getNombre( );
+			linea += " # " + bandeja.getSegundo( ).getNombre( );
+			linea += " # " + bandeja.getPostre( ).getNombre( );
+			linea += " # " + bandeja.getBebida( ).getNombre( );
 
-		FileWriter fw;
-		try {
-			fw = new FileWriter( new File( "BaseEstadistica.txt" ), true );
-			BufferedWriter bw = new BufferedWriter( fw );
-			bw.append( linea + "\n" );
-			bw.close( );
-			fw.close( );
-		}
-		catch( IOException e ) {
-			System.err.println( e );
+			FileWriter fw;
+			try {
+				fw = new FileWriter( new File( "BaseEstadistica.txt" ), true );
+				BufferedWriter bw = new BufferedWriter( fw );
+				bw.append( linea + "\n" );
+				bw.close( );
+				fw.close( );
+			}
+			catch( IOException e ) {
+				System.err.println( e );
+			}
 		}
 	}
 
@@ -527,45 +537,48 @@ public class GestionDatosImp implements GestionDatos {
 	@Override
 	public synchronized void valorar( int idFactura, int valoracionPrimero, int valoracionSegundo,
 			int valoracionPostre ) {
-		String baseEstadistica = "";
-		String auxiliar = null;
-		try {
-			FileReader fr = new FileReader( "BaseEstadistica.txt" );
-			BufferedReader br = new BufferedReader( fr );
-			String linea;
-			while( ( linea = br.readLine( ) ) != null ) {
-				if( linea.split( "#" )[ 0 ].trim( ).equals( String.valueOf( idFactura ) ) ) {
-					String[ ] campos = linea.split( "#" );
-					auxiliar = campos[ 0 ].trim( );
-					auxiliar += " # " + valoracionPrimero;
-					auxiliar += " # " + valoracionSegundo;
-					auxiliar += " # " + valoracionPostre;
-					auxiliar += " # " + campos[ 4 ].trim( );
-					auxiliar += " # " + campos[ 5 ].trim( );
-					auxiliar += " # " + campos[ 6 ].trim( );
-					auxiliar += " # " + campos[ 7 ].trim( );
-					auxiliar += " # " + campos[ 8 ].trim( );
-					auxiliar += " # " + campos[ 9 ].trim( );
-					auxiliar += " # " + campos[ 10 ].trim( );
+
+		if( idFactura >= 0 && valoracionPrimero >= 1 && valoracionPrimero <= 5 && valoracionSegundo >= 1
+				&& valoracionSegundo <= 5 && valoracionPostre >= 1 && valoracionPostre <= 5 ) {
+			String baseEstadistica = "";
+			String auxiliar = null;
+			try {
+				FileReader fr = new FileReader( "BaseEstadistica.txt" );
+				BufferedReader br = new BufferedReader( fr );
+				String linea;
+				while( ( linea = br.readLine( ) ) != null ) {
+					if( linea.split( "#" )[ 0 ].trim( ).equals( String.valueOf( idFactura ) ) ) {
+						String[ ] campos = linea.split( "#" );
+						auxiliar = campos[ 0 ].trim( );
+						auxiliar += " # " + valoracionPrimero;
+						auxiliar += " # " + valoracionSegundo;
+						auxiliar += " # " + valoracionPostre;
+						auxiliar += " # " + campos[ 4 ].trim( );
+						auxiliar += " # " + campos[ 5 ].trim( );
+						auxiliar += " # " + campos[ 6 ].trim( );
+						auxiliar += " # " + campos[ 7 ].trim( );
+						auxiliar += " # " + campos[ 8 ].trim( );
+						auxiliar += " # " + campos[ 9 ].trim( );
+						auxiliar += " # " + campos[ 10 ].trim( );
+					}
+					else {
+						auxiliar = linea;
+					}
+					baseEstadistica += auxiliar + "\n";
 				}
-				else {
-					auxiliar = linea;
-				}
-				baseEstadistica += auxiliar + "\n";
+				br.close( );
+				fr.close( );
+
+				FileWriter fw = new FileWriter( new File( "BaseEstadistica.txt" ), false );
+				BufferedWriter bw = new BufferedWriter( fw );
+				bw.write( baseEstadistica, 0, baseEstadistica.length( ) );
+				bw.close( );
+				fw.close( );
 			}
-			br.close( );
-			fr.close( );
-
-			FileWriter fw = new FileWriter( new File( "BaseEstadistica.txt" ), false );
-			BufferedWriter bw = new BufferedWriter( fw );
-			bw.write( baseEstadistica, 0, baseEstadistica.length( ) );
-			bw.close( );
-			fw.close( );
+			catch( Exception e ) {
+				System.err.println( e );
+			}
 		}
-		catch( Exception e ) {
-			System.err.println( e );
-		}
-
 	}
 
 }
