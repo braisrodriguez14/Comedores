@@ -479,51 +479,54 @@ public class GestionDatosImp implements GestionDatos {
 
 	@Override
 	public synchronized void devolverBandeja( int idBandeja ) {
-		String baseEstadistica = "";
-		String auxiliar = null;
-		try {
-			FileReader fr = new FileReader( "BaseEstadistica.txt" );
-			BufferedReader br = new BufferedReader( fr );
-			String linea;
-			while( ( linea = br.readLine( ) ) != null ) {
-				if( linea.split( "#" )[ 6 ].trim( ).equals( String.valueOf( idBandeja ) )
-						&& linea.split( "#" )[ 5 ].trim( ).equals( "-1" ) ) {
-					String[ ] campos = linea.split( "#" );
-					auxiliar = campos[ 0 ].trim( );
-					auxiliar += " # " + campos[ 1 ].trim( );
-					auxiliar += " # " + campos[ 2 ].trim( );
-					auxiliar += " # " + campos[ 3 ].trim( );
-					auxiliar += " # " + campos[ 4 ].trim( );
-					auxiliar += " # " + java.time.LocalTime.now( ).getHour( ) + ":"
-							+ java.time.LocalTime.now( ).getMinute( );
-					auxiliar += " # " + campos[ 6 ].trim( );
-					auxiliar += " # " + campos[ 7 ].trim( );
-					auxiliar += " # " + campos[ 8 ].trim( );
-					auxiliar += " # " + campos[ 9 ].trim( );
-					auxiliar += " # " + campos[ 10 ].trim( );
+		if( idBandeja > 0 ) {
+			String baseEstadistica = "";
+			String auxiliar = null;
+			try {
+				FileReader fr = new FileReader( "BaseEstadistica.txt" );
+				BufferedReader br = new BufferedReader( fr );
+				String linea;
+				while( ( linea = br.readLine( ) ) != null ) {
+					if( linea.split( "#" )[ 6 ].trim( ).equals( String.valueOf( idBandeja ) )
+							&& linea.split( "#" )[ 5 ].trim( ).equals( "-1" ) ) {
+						String[ ] campos = linea.split( "#" );
+						auxiliar = campos[ 0 ].trim( );
+						auxiliar += " # " + campos[ 1 ].trim( );
+						auxiliar += " # " + campos[ 2 ].trim( );
+						auxiliar += " # " + campos[ 3 ].trim( );
+						auxiliar += " # " + campos[ 4 ].trim( );
+						auxiliar += " # " + java.time.LocalTime.now( ).getHour( ) + ":"
+								+ java.time.LocalTime.now( ).getMinute( );
+						auxiliar += " # " + campos[ 6 ].trim( );
+						auxiliar += " # " + campos[ 7 ].trim( );
+						auxiliar += " # " + campos[ 8 ].trim( );
+						auxiliar += " # " + campos[ 9 ].trim( );
+						auxiliar += " # " + campos[ 10 ].trim( );
+					}
+					else {
+						auxiliar = linea;
+					}
+					baseEstadistica += auxiliar + "\n";
 				}
-				else {
-					auxiliar = linea;
-				}
-				baseEstadistica += auxiliar + "\n";
-			}
-			br.close( );
-			fr.close( );
+				br.close( );
+				fr.close( );
 
-			FileWriter fw = new FileWriter( new File( "BaseEstadistica.txt" ), false );
-			BufferedWriter bw = new BufferedWriter( fw );
-			bw.write( baseEstadistica, 0, baseEstadistica.length( ) );
-			bw.close( );
-			fw.close( );
-		}
-		catch( Exception e ) {
-			System.err.println( e );
+				FileWriter fw = new FileWriter( new File( "BaseEstadistica.txt" ), false );
+				BufferedWriter bw = new BufferedWriter( fw );
+				bw.write( baseEstadistica, 0, baseEstadistica.length( ) );
+				bw.close( );
+				fw.close( );
+			}
+			catch( Exception e ) {
+				System.err.println( e );
+			}
 		}
 
 	}
 
 	@Override
-	public synchronized void valorar( int idFactura, int valoracionPrimero, int valoracionSegundo, int valoracionPostre ) {
+	public synchronized void valorar( int idFactura, int valoracionPrimero, int valoracionSegundo,
+			int valoracionPostre ) {
 		String baseEstadistica = "";
 		String auxiliar = null;
 		try {
