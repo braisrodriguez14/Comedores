@@ -1,0 +1,13 @@
+
+IdxFactura: 1
+Vale: 856
+CodigoBandeja: 27
+Platos: Verduras salteadas,Ternera a la parrilla,Yogurt de limón
+IdxFactura: 2
+Vale: 563
+CodigoBandeja: 118
+Platos: Verduras salteadas,Cerdo cocido,Yogurt de chocolate
+IdxFactura: 3
+Vale: 346
+CodigoBandeja: 87
+Platos: Verduras salteadas,Cerdo a la parrilla,Helado de vainilla

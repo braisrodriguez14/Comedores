@@ -1,0 +1,45 @@
+IdxPlato: 1
+Nombre: Cerdo a la parrilla
+Calorias: 500
+Ingredientes: guacamole,carne de cerdo,patatas fritas
+Tipo: principal
+IdxPlato: 2
+Nombre: Cerdo a la plancha
+Calorias: 500
+Ingredientes: guacamole,carne de cerdo,patatas fritas
+Tipo: principal
+IdxPlato: 3
+Nombre: Cerdo cocido
+Calorias: 500
+Ingredientes: guacamole,carne de cerdo,patatas fritas
+Tipo: principal
+IdxPlato: 4
+Nombre: Ternera a la parrilla
+Calorias: 500
+Ingredientes: guacamole,carne de ternera,patatas fritas
+Tipo: principal
+IdxPlato: 5
+Nombre: Helado de vainilla
+Calorias: 700
+Ingredientes: vainilla,chocolate
+Tipo: postre
+IdxPlato: 6
+Nombre: Yogurt de chocolate
+Calorias: 700
+Ingredientes: yogurt,chocolate,leche
+Tipo: postre
+IdxPlato: 7
+Nombre: Yogurt de limón
+Calorias: 600
+Ingredientes: yogurt,limón,leche
+Tipo: postre
+IdxPlato: 8
+Nombre: Yogurt de guacamole
+Calorias: 300
+Ingredientes: yogurt,guacamole,leche
+Tipo: postre
+IdxPlato: 9
+Nombre: Verduras salteadas
+Calorias: 300
+Ingredientes: verdura
+Tipo: entrante

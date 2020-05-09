@@ -1,0 +1,60 @@
+IdxMenu: 1
+Fecha: 2020-04-27
+NombresEntrantes: Verduras salteadas
+NombresPrincipales: Cerdo a la parrilla,Cerdo a la plancha,Cerdo cocido
+NombresPostres: Helado de vainilla,Yogurt de chocolate,Yogurt de limón
+IdxMenu: 2
+Fecha: 2020-04-27
+NombresEntrantes: Verduras salteadas
+NombresPrincipales: Cerdo a la parrilla,Cerdo a la plancha,Cerdo cocido
+NombresPostres: Helado de vainilla,Yogurt de chocolate,Yogurt de limón
+IdxMenu: 3
+Fecha: 2020-04-27
+NombresEntrantes: Verduras salteadas
+NombresPrincipales: Cerdo a la parrilla,Cerdo a la plancha,Cerdo cocido
+NombresPostres: Helado de vainilla,Yogurt de chocolate,Yogurt de limón
+IdxMenu: 4
+Fecha: 2020-04-27
+NombresEntrantes: Verduras salteadas
+NombresPrincipales: Cerdo a la parrilla,Cerdo a la plancha,Cerdo cocido
+NombresPostres: Helado de vainilla,Yogurt de chocolate,Yogurt de limón
+IdxMenu: 5
+Fecha: 2020-04-27
+NombresEntrantes: Verduras salteadas
+NombresPrincipales: Cerdo a la parrilla,Cerdo a la plancha,Cerdo cocido
+NombresPostres: Helado de vainilla,Yogurt de chocolate,Yogurt de limón
+IdxMenu: 6
+Fecha: 2020-04-27
+NombresEntrantes: Verduras salteadas
+NombresPrincipales: Cerdo a la parrilla,Cerdo a la plancha,Cerdo cocido
+NombresPostres: Helado de vainilla,Yogurt de chocolate,Yogurt de limón
+IdxMenu: 7
+Fecha: 2020-04-27
+NombresEntrantes: Verduras salteadas
+NombresPrincipales: Cerdo a la parrilla,Cerdo a la plancha,Cerdo cocido
+NombresPostres: Helado de vainilla,Yogurt de chocolate,Yogurt de limón
+IdxMenu: 8
+Fecha: 2020-04-27
+NombresEntrantes: Verduras salteadas
+NombresPrincipales: Cerdo a la parrilla,Cerdo a la plancha,Cerdo cocido
+NombresPostres: Helado de vainilla,Yogurt de chocolate,Yogurt de limón
+IdxMenu: 9
+Fecha: 2020-04-27
+NombresEntrantes: Verduras salteadas
+NombresPrincipales: Cerdo a la parrilla,Cerdo a la plancha,Cerdo cocido
+NombresPostres: Helado de vainilla,Yogurt de chocolate,Yogurt de limón
+IdxMenu: 10
+Fecha: 2020-04-27
+NombresEntrantes: Verduras salteadas
+NombresPrincipales: Cerdo a la parrilla,Cerdo a la plancha,Cerdo cocido
+NombresPostres: Helado de vainilla,Yogurt de chocolate,Yogurt de limón
+IdxMenu: 11
+Fecha: 2020-04-27
+NombresEntrantes: Verduras salteadas
+NombresPrincipales: Cerdo a la parrilla,Cerdo a la plancha,Cerdo cocido
+NombresPostres: Helado de vainilla,Yogurt de chocolate,Yogurt de limón
+IdxMenu: 12
+Fecha: 2020-04-27
+NombresEntrantes: Verduras salteadas
+NombresPrincipales: Cerdo a la parrilla,Cerdo a la plancha,Cerdo cocido
+NombresPostres: Helado de vainilla,Yogurt de chocolate,Yogurt de limón
