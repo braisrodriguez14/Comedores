@@ -100,21 +100,35 @@ public class EstadisticaImp implements Estadistica {
     }
 
     @Override
-    public void mostrarDistribucionOcupacion(LocalDate dia) {
-        // TODO Auto-generated method stub
-        DAOEstadistica daoe = new DAOEstadisticaImp();
-        ArrayList<LocalDateTime> bandejas = daoe.devolverTiempoBandejaAsignada(dia);
-        ArrayList<Integer> numeros = new ArrayList<>();
-        System.out.println("La distribución entre las 11 y las 17 es la siguiente:");
-        for (int i = 11; i < 18; i++) {
-            numeros.add(0);
-            for (LocalDateTime l : bandejas) {
-                if (l.getHour() == i) {
-                    numeros.set(i - 11, numeros.get(i - 11) + 1);
-                }
-            }
-            System.out.println(i - 11 + ": " + numeros.get(i - 11));
-        }
+    public ArrayList<Integer> mostrarDistribucionOcupacion(LocalDate dia) {
+    	//1
+    	if( dia == null ) {
+    		//2
+			return null;
+		}
+    	else {
+    		//3
+            DAOEstadistica daoe = new DAOEstadisticaImp();
+            ArrayList<LocalDateTime> bandejas = daoe.devolverTiempoBandejaAsignada(dia);
+            ArrayList<Integer> numeros = new ArrayList<>();
+            //4
+            for (int i = 11; i < 18; i++) {
+                numeros.add(0);
+                //5
+                for (LocalDateTime l : bandejas) {
+                	//6
+                    if (l.getHour() == i) {
+                    	//7
+                        numeros.set(i - 11, numeros.get(i - 11) + 1);
+                    }
+                }//8
+                //9
+                System.out.println(i - 11 + ": " + numeros.get(i - 11));
+            }//10
+
+        	return numeros;
+    	}
+    	//11
     }
 
     @Override
