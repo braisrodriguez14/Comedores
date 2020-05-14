@@ -118,8 +118,7 @@ public class EstadisticaImp implements Estadistica {
     }
 
     @Override
-    public void mostrarHoraMasFrecuente() {
-        // TODO Auto-generated method stub
+    public ArrayList<Integer> mostrarHoraMasFrecuente() {
         DAOEstadistica daoe = new DAOEstadisticaImp();
         String[] semana = { "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY" };
         ArrayList<ArrayList<LocalDateTime>> dias = new ArrayList<>();
@@ -128,6 +127,7 @@ public class EstadisticaImp implements Estadistica {
             dias.add(new ArrayList<>());
             dias.set(i, new ArrayList<>(((Map) daoe.obtenerTiemposDiaAsignada(semana[i])).values()));
         }
+        
         ArrayList<ArrayList<Integer>> numeros = new ArrayList<>();
         for (int j = 0; j < 7; j++) {
             numeros.add(new ArrayList<>());
@@ -140,11 +140,13 @@ public class EstadisticaImp implements Estadistica {
                 }
             }
         }
-        String[] semanaE = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
-        System.out.println("Las horas más concurridas son las siguientes:");
+        
+        ArrayList<Integer> resultado = new ArrayList<>();
         for (int i = 0; i < 7; i++) {
-            System.out.println(semanaE[i] + ": " + numeros.get(i).stream().max(Integer::compare).get());
+            resultado.add(numeros.get(i).stream().max(Integer::compare).get());
         }
+        
+        return resultado;
     }
 
     @Override

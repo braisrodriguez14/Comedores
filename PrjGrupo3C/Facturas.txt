@@ -11,3 +11,11 @@ IdxFactura: 3
 Vale: 346
 CodigoBandeja: 87
 Platos: Verduras salteadas,Cerdo a la parrilla,Helado de vainilla
+IdxFactura: 4
+Vale: 125
+CodigoBandeja: 114
+Platos: Verduras salteadas,Cerdo cocido,Helado de vainilla
+IdxFactura: 5
+Vale: 300
+CodigoBandeja: 387
+Platos: Verduras salteadas,Cerdo cocido,Helado de vainilla

@@ -230,3 +230,45 @@ Comentario: no
 cogida
 CodigoBandeja: 4
 TiempoCogida: 2020-04-27T20:41:20.138
+cogida
+CodigoBandeja: 114
+TiempoCogida: 2020-05-10T19:02:14.515166200
+entregada
+CodigoBandeja: 114
+TiempoCogida: 2020-05-10T19:02:14.520167600
+valoracion
+Nombre: Verduras salteadas
+Nota: 1
+Comentario: 
+valoracion
+Nombre: Cerdo cocido
+Nota: 1
+Comentario: 
+valoracion
+Nombre: Helado de vainilla
+Nota: 1
+Comentario: 
+cogida
+CodigoBandeja: 4
+TiempoCogida: 2020-05-10T19:02:25.617078
+cogida
+CodigoBandeja: 387
+TiempoCogida: 2020-05-10T19:03:42.108277700
+entregada
+CodigoBandeja: 387
+TiempoCogida: 2020-05-10T19:03:42.113279
+valoracion
+Nombre: Verduras salteadas
+Nota: 1
+Comentario: 
+valoracion
+Nombre: Cerdo cocido
+Nota: 1
+Comentario: 
+valoracion
+Nombre: Helado de vainilla
+Nota: 1
+Comentario: 
+cogida
+CodigoBandeja: 4
+TiempoCogida: 2020-05-10T19:03:46.625423200
