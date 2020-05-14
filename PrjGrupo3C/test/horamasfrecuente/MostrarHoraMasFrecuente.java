@@ -1,10 +1,10 @@
-package guardardatos;
+package horamasfrecuente;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class Prueba {
+class MostrarHoraMasFrecuente {
 
 	@Test
 	void test() {
