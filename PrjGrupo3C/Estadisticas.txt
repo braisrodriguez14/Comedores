@@ -1,29 +1,4 @@
-cogida
-CodigoBandeja: 1
-TiempoCogida: 2020-05-14T14:15cogida
-CodigoBandeja: 973
-TiempoCogida: 2020-05-15T12:26:11.027276300
-cogida
-CodigoBandeja: 310
-TiempoCogida: 2020-05-15T12:26:11.104381400
-cogida
-CodigoBandeja: 976
-TiempoCogida: 2020-05-15T12:26:11.158414100
-cogida
-CodigoBandeja: 736
-TiempoCogida: 2020-05-15T12:26:11.175983100
-cogida
-CodigoBandeja: 168
-TiempoCogida: 2020-05-15T12:26:11.183789800
-cogida
-CodigoBandeja: 86
-TiempoCogida: 2020-05-15T12:26:11.191597500
-cogida
-CodigoBandeja: 927
-TiempoCogida: 2020-05-15T12:26:11.199406800
-cogida
-CodigoBandeja: 4
-TiempoCogida: 2020-05-15T12:26:11.221854300
-cogida
-CodigoBandeja: 824
-TiempoCogida: 2020-05-15T12:26:11.236493500
+valoracion
+Nombre: Cerdo a la parrilla
+Nota: 5
+Comentario: Correcto

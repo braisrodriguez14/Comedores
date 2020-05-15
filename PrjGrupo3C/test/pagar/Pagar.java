@@ -14,6 +14,10 @@ import Implementacion.SeleccionImp;
 import Interfaces.Pago;
 import Interfaces.Seleccion;
 
+
+//Responsable: Antonio Sande Bouzas 
+
+
 class Pagar {
 
 	private Seleccion seleccion;

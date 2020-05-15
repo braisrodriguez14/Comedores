@@ -18,7 +18,7 @@ public class EstadisticaImp implements Estadistica {
     public void calcularOcupacionActual() {
         DAOEstadistica daoe = new DAOEstadisticaImp();
         System.out.println("La ocupación actual es de: " + daoe.devolverBandejasSinDevolver().size());
-    }
+    } 
 
     @Override
     public void mostrarStatsPlatos() {
@@ -67,7 +67,7 @@ public class EstadisticaImp implements Estadistica {
     }
 
     @Override
-    public void mostrarRankingPlatos() {
+    public ArrayList<String> mostrarRankingPlatos() {
         // TODO Auto-generated method stub
         DAOEstadistica daoe = new DAOEstadisticaImp();
         ArrayList<Valoracion> valoraciones = daoe.devolverValoraciones();
@@ -93,10 +93,8 @@ public class EstadisticaImp implements Estadistica {
             ranking.add(max.get().getKey());
             aux.remove(max.get().getKey());
         }
-        System.out.println("El ranking de platos es el siguiente:");
-        for (String s : ranking) {
-            System.out.println(s + ": " + platos.get(s));
-        }
+        
+        return ranking;
     }
 
     @Override
