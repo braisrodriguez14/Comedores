@@ -44,6 +44,7 @@ class Pagar {
 
 	@Test
 	void UC_0008_P_01_CP_01( ) {
+		//Arrange
 		tamInicial = tam( );
 
 		seleccion = new SeleccionImp( );
@@ -52,32 +53,38 @@ class Pagar {
 		seleccion.setPostre( new Plato( "Helado de vainilla", 700, "postre" ) );
 		seleccion.setBebida( "Agua" );
 
+		//Act
 		pago = new Implementacion.Pago( );
 		pago.setHoraIni( LocalDateTime.now( ) );
 		pago.pagar( seleccion );
 
 		tamFinal = tam( );
 
-		Assertions.assertEquals( true, tamFinal > tamInicial );
+		Assertions
+		//Assert.assertEquals( true, tamFinal > tamInicial );
 	}
 
 	@Test
 	void UC_0008_P_01_CP_02( ) {
+		//Arrange
 		tamInicial = tam( );
 
 		seleccion = null;
 
+		//Act
 		pago = new Implementacion.Pago( );
 		pago.setHoraIni( LocalDateTime.now( ) );
 		pago.pagar( seleccion );
 
 		tamFinal = tam( );
 
-		Assertions.assertEquals( true, tamFinal > tamInicial );
+		//Assert
+		Assertions.assertEquals( true, tamFinal == tamInicial );
 	}
 
 	@Test
 	void UC_0008_P_01_CP_03( ) {
+		//Arrange
 		tamInicial = tam( );
 
 		seleccion = new SeleccionImp( );
@@ -86,17 +93,20 @@ class Pagar {
 		seleccion.setPostre( new Plato( "Helado de vainilla", 700, "postre" ) );
 		seleccion.setBebida( "Agua" );
 
+		//Act
 		pago = new Implementacion.Pago( );
 		pago.setHoraIni( LocalDateTime.now( ) );
 		pago.pagar( seleccion );
 
 		tamFinal = tam( );
 
+		//Assert
 		Assertions.assertEquals( true, tamFinal > tamInicial );
 	}
 
 	@Test
 	void UC_0008_P_01_CP_04( ) {
+		//Arrange
 		tamInicial = tam( );
 
 		seleccion = new SeleccionImp( );
@@ -105,17 +115,20 @@ class Pagar {
 		seleccion.setPostre( null );
 		seleccion.setBebida( null );
 
+		//Act
 		pago = new Implementacion.Pago( );
 		pago.setHoraIni( LocalDateTime.now( ) );
 		pago.pagar( seleccion );
 
 		tamFinal = tam( );
 
-		Assertions.assertEquals( true, tamFinal > tamInicial );
+		//Assert
+		Assertions.assertEquals( true, tamFinal == tamInicial );
 	}
 
 	@Test
 	void UC_0008_P_01_CP_05( ) {
+		//Arrange
 		tamInicial = tam( );
 
 		seleccion = new SeleccionImp( );
@@ -124,17 +137,20 @@ class Pagar {
 		seleccion.setPostre( new Plato( "Helado de vainilla", 700, "postre" ) );
 		seleccion.setBebida( "Agua" );
 
+		//Act
 		pago = new Implementacion.Pago( );
 		pago.setHoraIni( LocalDateTime.now( ) );
 		pago.pagar( seleccion );
 
 		tamFinal = tam( );
 
-		Assertions.assertEquals( true, tamFinal > tamInicial );
+		//Assert
+		Assertions.assertEquals( true, tamFinal == tamInicial );
 	}
 
 	@Test
 	void UC_0008_P_01_CP_06( ) {
+		//Arrange
 		tamInicial = tam( );
 
 		seleccion = new SeleccionImp( );
@@ -143,17 +159,20 @@ class Pagar {
 		seleccion.setPostre( null );
 		seleccion.setBebida( "Agua" );
 
+		//Act
 		pago = new Implementacion.Pago( );
 		pago.setHoraIni( LocalDateTime.now( ) );
 		pago.pagar( seleccion );
 
 		tamFinal = tam( );
 
-		Assertions.assertEquals( true, tamFinal > tamInicial );
+		//Assert
+		Assertions.assertEquals( true, tamFinal == tamInicial );
 	}
 
 	@Test
 	void UC_0008_P_01_CP_07( ) {
+		//Arrange
 		tamInicial = tam( );
 
 		seleccion = new SeleccionImp( );
@@ -162,17 +181,20 @@ class Pagar {
 		seleccion.setPostre( new Plato( "Helado de vainilla", 700, "postre" ) );
 		seleccion.setBebida( null );
 
+		//Act
 		pago = new Implementacion.Pago( );
 		pago.setHoraIni( LocalDateTime.now( ) );
 		pago.pagar( seleccion );
 
 		tamFinal = tam( );
 
-		Assertions.assertEquals( true, tamFinal > tamInicial );
+		//Assert
+		Assertions.assertEquals( true, tamFinal == tamInicial );
 	}
 
 	@Test
 	void UC_0008_P_01_CP_08( ) {
+		//Arrange
 		tamInicial = tam( );
 
 		seleccion = new SeleccionImp( );
@@ -181,17 +203,20 @@ class Pagar {
 		seleccion.setPostre( new Plato( "Helado de vainilla", 700, "postre" ) );
 		seleccion.setBebida( "Agua" );
 
+		//Act
 		pago = new Implementacion.Pago( );
 		pago.setHoraIni( LocalDateTime.now( ) );
 		pago.pagar( seleccion );
 
 		tamFinal = tam( );
 
+		//Assert
 		Assertions.assertEquals( true, tamFinal > tamInicial );
 	}
 
 	@Test
 	void UC_0008_P_01_CP_09( ) {
+		//Arrange
 		tamInicial = tam( );
 
 		seleccion = new SeleccionImp( );
@@ -200,13 +225,15 @@ class Pagar {
 		seleccion.setPostre( new Plato( "Helado de vainilla", 700, "postre" ) );
 		seleccion.setBebida( "Agua" );
 
+		//Act
 		pago = new Implementacion.Pago( );
 		pago.setHoraIni( LocalDateTime.now( ) );
 		pago.pagar( seleccion );
 
 		tamFinal = tam( );
 
-		Assertions.assertEquals( true, tamFinal > tamInicial );
+		//Assert
+		Assertions.assertEquals( true, tamFinal == tamInicial );
 	}
 
 }
