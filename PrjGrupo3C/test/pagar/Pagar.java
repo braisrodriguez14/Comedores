@@ -60,8 +60,8 @@ class Pagar {
 
 		tamFinal = tam( );
 
-		Assertions
-		//Assert.assertEquals( true, tamFinal > tamInicial );
+		//Assert
+		Assertions.assertEquals( true, tamFinal > tamInicial );
 	}
 
 	@Test
