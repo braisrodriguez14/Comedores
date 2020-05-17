@@ -16,6 +16,8 @@ import Implementacion.DAOMenuImp;
 import Interfaces.DAOMenu;
 import Interfaces.Menu;
 
+//Responsable: Brais Rodriguez Suarez
+
 class GuardarMenu {
 
 	private DAOMenu daoMenu;
