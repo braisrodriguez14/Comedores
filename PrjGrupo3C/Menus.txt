@@ -1,0 +1,5 @@
+IdxMenu: 1
+Fecha: 2020-05-17
+NombresEntrantes: Ensalada,Ensalada,Ensalada
+NombresPrincipales: Macarrones,Macarrones,Macarrones
+NombresPostres: Natillas,Natillas,Natillas
