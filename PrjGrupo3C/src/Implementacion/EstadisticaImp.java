@@ -21,8 +21,9 @@ public class EstadisticaImp implements Estadistica {
     } 
 
     @Override
-    public void mostrarStatsPlatos() {
+    public String mostrarStatsPlatos() {
         // TODO Auto-generated method stub
+        String resultado = "";
         DAOEstadistica daoe = new DAOEstadisticaImp();
         ArrayList<Factura> facturas = daoe.devolverFacturas();
         HashMap<String, Integer> entrantes = new HashMap<>(), principales = new HashMap<>(), postres = new HashMap<>();
@@ -58,12 +59,10 @@ public class EstadisticaImp implements Estadistica {
                 .max(Comparator.comparing(Map.Entry::getValue));
         Optional<Entry<String, Integer>> minPostres = postres.entrySet().stream()
                 .min(Comparator.comparing(Map.Entry::getValue));
-        System.out.println("El entrante más elegido es: " + maxEntrante.get().getKey());
-        System.out.println("El entrante menos elegido es: " + minEntrante.get().getKey());
-        System.out.println("El principal más elegido es: " + maxPrincipal.get().getKey());
-        System.out.println("El principal menos elegido es: " + minPrincipal.get().getKey());
-        System.out.println("El postre más elegido es: " + maxPostres.get().getKey());
-        System.out.println("El postre menos elegido es: " + minPostres.get().getKey());
+        resultado = ("El entrante mas elegido es: " + maxEntrante.get().getKey() + ". El entrante menos elegido es: " + minEntrante.get().getKey() + 
+                        ". El principal mas elegido es: " + maxPrincipal.get().getKey() + ". El principal menos elegido es: " + minPrincipal.get().getKey() + 
+                        ". El postre mas elegido es: " + maxPostres.get().getKey() + ". El postre menos elegido es: " + minPostres.get().getKey());
+        return resultado;
     }
 
     @Override

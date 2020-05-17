@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public interface Estadistica {
     public void  calcularOcupacionActual();
-    public void  mostrarStatsPlatos();
+    public String  mostrarStatsPlatos();
     public ArrayList<String>  mostrarRankingPlatos();
     public ArrayList< Integer >  mostrarDistribucionOcupacion(LocalDate dia);
     public ArrayList<Integer>  mostrarHoraMasFrecuente();
