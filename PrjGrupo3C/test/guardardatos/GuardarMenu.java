@@ -68,7 +68,7 @@ class GuardarMenu {
 		File archivo = new File("Menus.txt");
 				
 		//Assert
-		assertEquals(0, archivo.length());
+		assertEquals(0, archivo.length(), "Se ha guardado un menu no valido.");
 		
 		/*
 		 * Se comprueba que el menu no se haya guardado en el archivo ya que no es un menu valido
@@ -93,7 +93,7 @@ class GuardarMenu {
 		File archivo = new File("Menus.txt");
 				
 		//Assert
-		assertEquals(0, archivo.length());
+		assertEquals(0, archivo.length(), "Se ha guardado un menu no valido.");
 		
 		/*
 		 * Se comprueba que el menu no se haya guardado en el archivo ya que no es un menu valido
@@ -118,7 +118,7 @@ class GuardarMenu {
 		File archivo = new File("Menus.txt");
 				
 		//Assert
-		assertEquals(0, archivo.length());
+		assertEquals(0, archivo.length(), "Se ha guardado un menu no valido.");
 		
 		/*
 		 * Se comprueba que el menu no se haya guardado en el archivo ya que no es un menu valido
@@ -143,7 +143,7 @@ class GuardarMenu {
 		File archivo = new File("Menus.txt");
 				
 		//Assert
-		assertEquals(0, archivo.length());
+		assertEquals(0, archivo.length(), "Se ha guardado un menu no valido.");
 		
 		/*
 		 * Se comprueba que el menu no se haya guardado en el archivo ya que no es un menu valido
@@ -168,7 +168,7 @@ class GuardarMenu {
 		File archivo = new File("Menus.txt");
 				
 		//Assert
-		assertEquals(0, archivo.length());
+		assertEquals(0, archivo.length(), "Se ha guardado un menu no valido.");
 		
 		/*
 		 * Se comprueba que el menu no se haya guardado en el archivo ya que no es un menu valido
@@ -190,16 +190,14 @@ class GuardarMenu {
 		
 		//Act
 		daoMenu.guardarMenu(menu);
-		
-		File archivo = new File("Menus.txt");
-		
 		Menu menuGuardado = daoMenu.devolverMenus().get(0);
+		
 		//Assert
-		Assertions.assertAll(
-				( ) -> assertNotNull(menuGuardado.getFecha()),
-				( ) -> assertEquals(3, menuGuardado.getEntrantes().size()),
-				( ) -> assertEquals(3, menuGuardado.getPrincipales().size()),
-				( ) -> assertEquals(3, menuGuardado.getPostres().size())
+		assertAll(
+				() -> assertNotNull(menuGuardado.getFecha(), "La fecha del menu guardado es incorrecta"),
+				() -> assertEquals(3, menuGuardado.getEntrantes().size(), "El numero de entrantes es incorrecto"),
+				() -> assertEquals(3, menuGuardado.getPrincipales().size(), "El numero de platos principales es incorrecto"),
+				() -> assertEquals(3, menuGuardado.getPostres().size(), "El numero de postres es incorrecto")
 		);
 		
 		/*

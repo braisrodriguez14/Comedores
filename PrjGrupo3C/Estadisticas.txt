@@ -1,4 +1,3 @@
-valoracion
-Nombre: Cerdo a la parrilla
-Nota: 5
-Comentario: Correcto
+cogida
+CodigoBandeja: 605
+TiempoCogida: 2020-05-04T14:10:04.451
